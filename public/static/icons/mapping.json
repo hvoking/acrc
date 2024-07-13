@@ -1,0 +1,30 @@
+{
+  "marker-red": {
+    "x": 0,
+    "y": 0,
+    "width": 128,
+    "height": 128,
+    "anchorY": 128
+  },
+  "marker-green": {
+    "x": 128,
+    "y": 0,
+    "width": 128,
+    "height": 128,
+    "anchorY": 128
+  },
+  "marker-blue": {
+    "x": 256,
+    "y": 0,
+    "width": 128,
+    "height": 128,
+    "anchorY": 128
+  },
+  "marker-yellow": {
+    "x": 384,
+    "y": 0,
+    "width": 128,
+    "height": 128,
+    "anchorY": 128
+  }
+}

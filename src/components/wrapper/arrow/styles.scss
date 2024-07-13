@@ -1,0 +1,21 @@
+.header-arrow-wrapper {
+  width: 15px; 
+  display: grid; 
+  grid-template-columns: 10px 5px;
+}
+.header-arrow-line {
+  width: 10spx;
+  height: 2px;
+  background-color: rgba(255, 130, 46);
+  align-self: center;
+  transform: translate(8px, 0);
+}
+.header-arrow-right {
+  width: 5px;
+  height: 5px;
+  border: solid rgba(255, 130, 46);
+  border-width: 0 2px 2px 0;
+  padding: 1px;
+  transform: rotate(-45deg);
+  align-self: center;
+}

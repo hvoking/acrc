@@ -1,0 +1,24 @@
+.pictures-wrapper {
+	display: grid;
+	overflow-y: scroll;
+	padding-right: 5px;
+	padding-left: 5px;
+}
+.pictures {
+	display: grid;
+	grid-gap: 5px;
+	padding-bottom: 60px;
+	height: min-content;
+}
+.pictures-box {
+	border: 1px solid rgba(212, 212, 212, 1);
+	background-color: rgba(255, 255, 255, 1);
+	box-shadow: 4px 4px 4px rgba(0, 0, 0, .12);
+	padding-right: 10px;
+}
+.pictures-item {
+	display: grid;
+	grid-template-columns: min-content auto;
+	font-size: 0.6em;
+	cursor: pointer;
+}

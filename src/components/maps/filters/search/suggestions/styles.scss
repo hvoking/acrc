@@ -1,0 +1,17 @@
+$font-color: rgba(255, 255, 255, 1);
+$background-color: rgba(33, 33, 43, 1);
+
+.search-suggestions {
+  position: absolute;
+  top: 30px;
+  left: 0px;
+  text-indent: 10px;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  color: $font-color;
+  background-color: $background-color;
+  font-weight: 400;
+  z-index: 7;
+}
