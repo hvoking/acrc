@@ -25,7 +25,6 @@ export const IconLayerProvider = ({children}: any) => {
 	const onClick = (info: any) => {
   		setActivePropertyInfo(true);
   		info.object && setPropertyInfo(info.object);
-  		window.open(info.object.link)
   	};
 
   	const onHover = (info: any) => {

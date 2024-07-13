@@ -1,6 +1,6 @@
 // App imports
 import { MapContainer } from './maps';
-import { Right } from './right';
+import { Property } from './property';
 import { Wrapper } from './wrapper';
 import './styles.scss';
 
@@ -17,7 +17,7 @@ export const Main = () => {
 		<Wrapper>
 			<div className="mapas-wrapper">
 				<MapContainer/>
-				<Right/>
+				<Property/>
 			</div>
 		</Wrapper>
 	)

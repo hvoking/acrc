@@ -2,12 +2,15 @@
 import { useRef } from 'react';
 
 // App imports
-import { Filters } from './filters';
-import { Sort } from './sort';
-import { Anuncios } from './anuncios'
+import { Info } from './info'
 import './styles.scss';
 
-export const Right = () => {
+// Context imports
+import { useTooltip } from '../context/maps/tooltip';
+
+export const Property = () => {
+    const { propertyInfo } = useTooltip();
+
 	const draggableRef = useRef<any>(null);
 	const offsetY = useRef<any>(0);
 	const isDragging = useRef(false);
@@ -48,17 +51,20 @@ export const Right = () => {
     };
 
 	return (
-		<div 
-			className="right"
-			ref={draggableRef} 
-			onMouseDown={handleStart} 
-			onTouchStart={handleStart}
-		>
-			<Filters/>
-			<Sort/>
-			<Anuncios/>
-		</div>
+        <>
+            {
+                propertyInfo && 
+        		<div 
+        			className="property-wrapper"
+        			ref={draggableRef} 
+        			onMouseDown={handleStart} 
+        			onTouchStart={handleStart}
+        		>
+                    <Info propertyInfo={propertyInfo}/>
+        		</div>
+            }
+        </>
 	)
 }
 
-Right.displayName="Right";
+Property.displayName="Property";

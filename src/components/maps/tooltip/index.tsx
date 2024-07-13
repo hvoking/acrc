@@ -6,6 +6,7 @@ import { useTooltip } from '../../context/maps/tooltip';
 
 export const Tooltip = () => {
 	const { propertyHoverInfo } = useTooltip(); 
+	
 	if (!propertyHoverInfo || !propertyHoverInfo.object) return <></>
 
 	return (

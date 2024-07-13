@@ -1,4 +1,4 @@
-.right {
+.property-wrapper {
 	display: grid;
 	grid-template-rows: min-content min-content auto;
 	color: rgba(66, 66, 66, 1);
@@ -10,8 +10,5 @@
 	top: calc(100vh - 60px - 100px);
 	left: 0;
 	z-index: 10;
-}
-.property-list-wrapper {
-	padding-left: 5px;
-	padding-right: 5px;
+	background-color: rgba(255, 255, 255, 1);
 }
