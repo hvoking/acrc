@@ -12,3 +12,12 @@
 	z-index: 10;
 	background-color: rgba(255, 255, 255, 1);
 }
+.circle-cross-wrapper {
+	position: absolute;
+	right: 10px;
+	top: 10px;
+}
+.circle-cross {
+  width: 20px;
+  cursor: pointer;
+}

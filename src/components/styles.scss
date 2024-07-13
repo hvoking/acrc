@@ -6,9 +6,3 @@
   	grid-template-columns: auto;
   	position: relative;
 }
-@media screen and (max-width: 1000px) {
-	.mapas-wrapper {
-	  	grid-template-columns: auto;
-	  	grid-template-rows: calc(100vh - 60px - 100px);
-	}
-}

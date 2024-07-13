@@ -1,5 +1,4 @@
 // App imports
-import { Arrow } from './arrow';
 import './styles.scss';
 
 export const Wrapper = ({children}: any) => {

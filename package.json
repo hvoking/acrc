@@ -2,7 +2,7 @@
   "name": "frontend",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://hvoking.github.io/Obras-SC",
+  "homepage": "https://hvoking.github.io/acrc-na-planta",
   "dependencies": {
     "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
     "@types/d3": "^7.4.1",

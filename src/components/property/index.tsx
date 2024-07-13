@@ -9,7 +9,7 @@ import './styles.scss';
 import { useTooltip } from '../context/maps/tooltip';
 
 export const Property = () => {
-    const { propertyInfo } = useTooltip();
+    const { setPropertyInfo, propertyInfo } = useTooltip();
 
 	const draggableRef = useRef<any>(null);
 	const offsetY = useRef<any>(0);
@@ -60,6 +60,14 @@ export const Property = () => {
         			onMouseDown={handleStart} 
         			onTouchStart={handleStart}
         		>
+                    <div className="circle-cross-wrapper">
+                        <img
+                            className="circle-cross"
+                            src={process.env.PUBLIC_URL + '/static/icons/circle_cross.svg'}
+                            alt="search-icon"
+                            onClick={() => setPropertyInfo(null)}
+                        />
+                    </div>
                     <Info propertyInfo={propertyInfo}/>
         		</div>
             }
