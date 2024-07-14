@@ -5,7 +5,6 @@ import { useCallback } from 'react';
 import { Tooltip } from './tooltip';
 import { Filters } from './filters';
 import { Logo } from './logo';
-import { Button } from './button';
 import './styles.scss';
 
 // Context imports
@@ -57,7 +56,6 @@ export const MapContainer = () => {
 				<Filters/>
 				<Tooltip/>
 				<Logo/>
-				<Button/>
 			</Map>
 		</div>
 	)

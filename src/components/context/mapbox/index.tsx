@@ -17,17 +17,9 @@ export const MapboxProvider = ({children}: any) => {
   const { viewport, setMarker } = useGeo();
 
   const mapRef = useRef<any>();
-  const pdfMapRef = useRef<any>();
 
   useEffect(() => {
     mapRef.current?.flyTo({
-      center: [ viewport.longitude, viewport.latitude ],
-      zoom: viewport.zoom,
-      duration: 3000, 
-      essential: true,
-    });
-
-    pdfMapRef.current?.flyTo({
       center: [ viewport.longitude, viewport.latitude ],
       zoom: viewport.zoom,
       duration: 3000, 
@@ -42,10 +34,7 @@ export const MapboxProvider = ({children}: any) => {
   }, [ viewport ]);
   
   return (
-    <MapboxContext.Provider value={{ 
-      mapRef, pdfMapRef,
-      currentBasemap, setCurrentBasemap,
-    }}>
+    <MapboxContext.Provider value={{ mapRef, currentBasemap, setCurrentBasemap }}>
       {children}
     </MapboxContext.Provider>
   )

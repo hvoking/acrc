@@ -14,7 +14,6 @@ export const useGeo = () => {
 
 export const GeoProvider = ({children}: any) => {
 	const [ cityName, setCityName ] = useState("blumenau");
-	const [ placeId, setPlaceId ] = useState<any>(null);
 	
 	const [ viewport, setViewport ] = useState(Locations.blumenau);
 	const [ placeCoordinates, setPlaceCoordinates ] = useState<any>(null);
@@ -36,7 +35,6 @@ export const GeoProvider = ({children}: any) => {
 	return (
 		<GeoContext.Provider value={{
 			cityName, setCityName, 
-			placeId, setPlaceId, 
 			marker, setMarker,
 			placeCoordinates, setPlaceCoordinates,
 			viewport, setViewport,
