@@ -3,6 +3,7 @@ import { useCallback } from 'react';
 
 // App imports
 import { Tooltip } from './tooltip';
+import { Social } from './social';
 import { Filters } from './filters';
 import { Logo } from './logo';
 import './styles.scss';
@@ -56,6 +57,7 @@ export const MapContainer = () => {
 				<Filters/>
 				<Tooltip/>
 				<Logo/>
+				<Social/>
 			</Map>
 		</div>
 	)
