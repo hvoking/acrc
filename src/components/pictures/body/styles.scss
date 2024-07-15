@@ -1,0 +1,28 @@
+.pictures-body {
+  display: grid;
+  grid-template-columns: min-content auto min-content;
+  align-items: center;
+  text-align: center;
+  font-size: 0.8em;
+  padding-left: 15%;
+  padding-right: 15%;
+
+}
+.pictures-item {
+  justify-self: center;
+  width: 90%;
+}
+.arrow-right {
+  width: 20px;
+  cursor: pointer;
+}
+.arrow-left {
+  width: 20px; 
+  cursor: pointer;
+}
+@media screen and (max-width: 1000px) {
+  .pictures-body {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+}

@@ -19,18 +19,12 @@ export const useIconLayer = () => {
 }
 
 export const IconLayerProvider = ({children}: any) => {
-	const { setPropertyHoverInfo, setPropertyInfo, setActivePropertyInfo } = useTooltip();
+	const { setPropertyHoverInfo, propertyInfo, setPropertyInfo, setActivePropertyInfo } = useTooltip();
 	const { currentId, setCurrentId, filterProperties } = useProperty();
 
-	const onClick = (info: any) => {
-  		setActivePropertyInfo(true);
-  		info.object && setPropertyInfo(info.object);
-  	};
-
-  	const onHover = (info: any) => {
+  	const onClick = (info: any) => {
   		info.object && setCurrentId(info.object.codigo);
-  		!info.object && setCurrentId(null);
-  		setPropertyHoverInfo(info);
+  		propertyInfo ? setPropertyInfo(info.object) : setPropertyHoverInfo(info);;
   	}
 
 	const iconMapping = process.env.PUBLIC_URL + '/static/icons/mapping.json';
@@ -54,8 +48,7 @@ export const IconLayerProvider = ({children}: any) => {
 			sizeUnits: 'meters',
 			sizeScale: 1,
 			sizeMinPixels: 30,
-			onHover,
-		    onClick: (info: any) => onClick(info),
+		    onClick,
 		    updateTriggers: {getIcon: [currentId]}
 		});
 	return (

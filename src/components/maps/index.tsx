@@ -11,6 +11,7 @@ import './styles.scss';
 // Context imports
 import { useMapbox } from '../context/mapbox';
 import { useGeo } from '../context/filters/geo';
+import { useTooltip } from '../context/maps/tooltip';
 
 // Layers imports
 import { useIconLayer } from '../context/maps/layers/icon';
@@ -28,6 +29,7 @@ const DeckGLOverlay = (props: DeckProps) => {
 }
 
 export const MapContainer = () => {
+	const { setPropertyInfo, setPropertyHoverInfo } = useTooltip();
 	const { mapRef, currentBasemap } = useMapbox();
 	const { viewport, setMarker, setPlaceCoordinates } = useGeo();
 	const { iconLayer } = useIconLayer();
@@ -52,6 +54,12 @@ export const MapContainer = () => {
 				doubleClickZoom={false}
 				antialias={true}
 				preserveDrawingBuffer={true}
+				onClick={(event: any) => {
+					if (!event.layer) {
+						setPropertyHoverInfo(null);
+						setPropertyInfo(null);
+					}}
+				}
 			>
 				<DeckGLOverlay layers={layers} glOptions={{preserveDrawingBuffer: true}}/>
 				<Filters/>

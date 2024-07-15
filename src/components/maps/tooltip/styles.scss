@@ -1,13 +1,31 @@
 .tooltip-wrapper {
   z-index: 3;
-  pointer-events: none;
   position: absolute;
-  background-color: rgba(0, 0, 0, 1);
   cursor: pointer;
-  border-radius: 5px; 
-  border: 2px solid rgba(126, 126, 132, 0.6);
   display: grid;
-  grid-template-rows: auto;
-  padding: 10px;
-  line-height: 30px;
+  overflow: hidden;
+  font-size: 0.8em;
+}
+.card-thumbnail {
+  border-radius: 10px 10px 0 0;
+}
+.card-thumbnail-description {
+  background-color: rgba(255, 255, 255, 1); 
+  width: 180px;
+  border-radius: 0 0 10px 10px;
+  display: grid;
+  color: rgba(0, 0, 0, 1);
+  grid-template-rows: min-content;
+  padding: 10px
+}
+.thumbnail-warning-button {
+  background-color: rgba(201, 84, 82, 1);
+  width: min-content;
+  height: min-content;
+  white-space: nowrap;
+  color: rgba(255, 255, 255, 1);
+  padding-right: 5px;
+  padding-left: 5px;
+  border-radius: 10px;
+  font-weight: 600;
 }

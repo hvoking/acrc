@@ -6,20 +6,20 @@ import './styles.scss';
 import { useTooltip } from '../context/maps/tooltip';
 import { useDraggable } from '../context/draggable';
 
-export const Card = () => {
+export const Card = ({ setActivePictures }: any) => {
     const { setPropertyInfo, propertyInfo } = useTooltip();
     const { handleStart, draggableRef } = useDraggable();
 
     if (!propertyInfo) return <></>
 
     return (
-		<div className="property-wrapper" ref={draggableRef}>
+		<div className="property-wrapper" ref={draggableRef} onMouseDown={handleStart} onTouchStart={handleStart}>
             <Cross setPropertyInfo={setPropertyInfo}/>
-                <div className="property-title" onMouseDown={handleStart} onTouchStart={handleStart}>
+                <div className="property-title">
                     {propertyInfo.nome}
                 </div>
                 <div className="info-wrapper">
-                <div className="property-images">
+                <div className="property-images" onClick={() => setActivePictures(true)}>
                     <img src={propertyInfo.urls[0]} alt="cover-img" className="cover-img"/>
                     <div className="property-secondary-images">
                         <img src={propertyInfo.urls[1]} alt="secondary-img" className="secondary-img"/>
