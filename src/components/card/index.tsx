@@ -1,5 +1,5 @@
 // App imports
-import { Info } from './info'
+import { Cross } from './cross';
 import './styles.scss';
 
 // Context imports
@@ -19,36 +19,25 @@ export const Card = () => {
 			onMouseDown={handleStart} 
 			onTouchStart={handleStart}
 		>
-            <div className="search-cross">
-                <svg viewBox="0 0 22 22" onClick={() => setPropertyInfo(null)}>
-                    <circle
-                        cx={11}
-                        cy={11}
-                        r={10}
-                        stroke="rgba(0, 0, 0, 1)"
-                        strokeWidth="1.5"
-                        fill="transparent"
-                    />
-                    <line
-                        x1={7.5}
-                        y1={7.5}
-                        x2={14.5}
-                        y2={14.5}
-                        stroke="rgba(0, 0, 0, 1)"
-                        strokeWidth="1.5"
-                    />
-                    <line
-                        x1={14.5}
-                        y1={7.5}
-                        x2={7.5}
-                        y2={14.5}
-                        stroke="rgba(0, 0, 0, 1)"
-                        strokeWidth="1.5"
-                    />
-
-                </svg>
+            <Cross setPropertyInfo={setPropertyInfo}/>
+            <div className="info-wrapper">
+                <div className="property-title">
+                    {propertyInfo.nome}
+                </div>
+                <div className="property-images">
+                    <img src={propertyInfo.urls[0]} alt="cover-img" className="cover-img"/>
+                    <div className="property-secondary-images">
+                        <img src={propertyInfo.urls[1]} alt="secondary-img" className="secondary-img"/>
+                        <img src={propertyInfo.urls[2]} alt="secondary-img" className="secondary-img"/>
+                        <img src={propertyInfo.urls[3]} alt="secondary-img" className="secondary-img"/>
+                        <img src={propertyInfo.urls[4]} alt="secondary-img" className="secondary-img"/>
+                    </div>
+                </div>
+                <div>
+                    Unidades a partir de R$ {propertyInfo.valorVenda}
+                </div>
+                <div></div>
             </div>
-            <Info propertyInfo={propertyInfo}/>
 		</div>
 	)
 }
