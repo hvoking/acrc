@@ -13,9 +13,9 @@ export const Card = ({ setActivePictures }: any) => {
     if (!propertyInfo) return <></>
 
     return (
-		<div className="property-wrapper" ref={draggableRef} onMouseDown={handleStart} onTouchStart={handleStart}>
+		<div className="property-wrapper" ref={draggableRef}>
             <Cross setPropertyInfo={setPropertyInfo}/>
-                <div className="property-title">
+                <div className="property-title" onMouseDown={handleStart} onTouchStart={handleStart}>
                     {propertyInfo.nome}
                 </div>
                 <div className="info-wrapper">
