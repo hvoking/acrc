@@ -13,17 +13,12 @@ export const Card = () => {
     if (!propertyInfo) return <></>
 
     return (
-		<div 
-			className="property-wrapper"
-			ref={draggableRef} 
-			onMouseDown={handleStart} 
-			onTouchStart={handleStart}
-		>
+		<div className="property-wrapper" ref={draggableRef}>
             <Cross setPropertyInfo={setPropertyInfo}/>
-            <div className="info-wrapper">
-                <div className="property-title">
+                <div className="property-title" onMouseDown={handleStart} onTouchStart={handleStart}>
                     {propertyInfo.nome}
                 </div>
+                <div className="info-wrapper">
                 <div className="property-images">
                     <img src={propertyInfo.urls[0]} alt="cover-img" className="cover-img"/>
                     <div className="property-secondary-images">
@@ -33,10 +28,17 @@ export const Card = () => {
                         <img src={propertyInfo.urls[4]} alt="secondary-img" className="secondary-img"/>
                     </div>
                 </div>
-                <div>
+                <div className="property-subtitle">
                     Unidades a partir de R$ {propertyInfo.valorVenda}
                 </div>
-                <div></div>
+                <div className="warning-button">ENTREGA 07/2026</div>
+                <div className="contact-section">
+                    <div className="card-info">
+                        <div className="card-info-title">Informações do Empreendimento</div>
+                        <div className="card-info-text">{propertyInfo.description}</div>
+                    </div>
+                    <div className="info-button">Iniciar Atendimento</div>
+                </div>
             </div>
 		</div>
 	)

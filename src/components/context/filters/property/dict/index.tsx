@@ -18,6 +18,7 @@ export const propertyDict: any = [
 		vagas: "4",
 		areaTotal: "639",
 		areaUtil: "401",
+		description: "O apartamento possui 04 suítes sendo uma master com closet e hidromassagem, hall, amplo living integrado com ampla sacada, cozinha, sala de estar, área social com piscina privativa, lavabo, elevador de compras, dormitório de serviço, banheiro de serviço e 04 vagas de garagem cobertas mais hobbybox.",
 		link: "https://www.acrcimoveis.com.br/comprar/sc/blumenau/ponta-aguda/apartamento/33733930",
 	},
 	{
@@ -39,6 +40,7 @@ export const propertyDict: any = [
 		vagas: "4",
 		areaTotal: "650",
 		areaUtil: "360",
+		description: "Possui 03 suítes, sendo a máster com hidro, closet e sacada, sala íntima, cozinha de apoio e no piso superior, sala de jantar, sala de estar, cozinha, área de festas com churrasqueira, dependência para empregada, área de serviço e com 04 vagas de garagem com 02 depósitos.",
 		link: "https://www.acrcimoveis.com.br/comprar/sc/blumenau/jardim-blumenau/apartamento/4359017",
 	},
 	{
@@ -59,6 +61,7 @@ export const propertyDict: any = [
 		vagas: "4",
 		areaTotal: "437",
 		areaUtil: "393",
+		description: "Possui 05 suítes, ambientes sociais super espaçosos permitindo divisão de ambientes para um dia a dia dinâmico possibilitando receber seus convidados com muito conforto e privacidade. São 04 vagas de garagem individuais!",
 		link: "https://www.acrcimoveis.com.br/comprar/sc/blumenau/jardim-blumenau/apartamento/73895528",
 	},
 	{
@@ -79,6 +82,7 @@ export const propertyDict: any = [
 		vagas: "5",
 		areaTotal: "",
 		areaUtil: "350",
+		description: "Apartamento em excelente localização no bairro Ponta Aguda! São 350 m² de área privativa, ambientes amplos, 04 suítes, lavabo, living, cozinha, vista para cidade e ainda 5 vagas de garagem individuais.",
 		link: "https://www.acrcimoveis.com.br/comprar/sc/blumenau/ponta-aguda/apartamento/33893509",
 		
 	},
@@ -100,6 +104,7 @@ export const propertyDict: any = [
 		vagas: "3",
 		areaTotal: "630",
 		areaUtil: "376",
+		description: "Cobertura conta com 03 suítes, living, cozinha, área de serviço, sacada, ampla área privativa, piscina privativa e 03 vagas de garagem.",
 		link: "https://www.acrcimoveis.com.br/comprar/sc/blumenau/ponta-aguda/apartamento/33367045",
 	},
 	{
@@ -120,6 +125,7 @@ export const propertyDict: any = [
 		vagas: "3",
 		areaTotal: "325",
 		areaUtil: "204",
+		description: "Viva com requinte, elegância e modernidade em cada ambiente. CONFIRA!",
 		link: "https://www.acrcimoveis.com.br/comprar/sc/blumenau/victor-konder/apartamento/72963989",
 	},
 	{
@@ -140,6 +146,7 @@ export const propertyDict: any = [
 		vagas: "3",
 		areaTotal: "524",
 		areaUtil: "288",
+		description: "Cobertura Duplex em localização privilegiada!",
 		link: "https://www.acrcimoveis.com.br/comprar/sc/blumenau/centro/apartamento/70380092",
 	},
 	{
@@ -160,6 +167,7 @@ export const propertyDict: any = [
 		vagas: "3",
 		areaTotal: "439",
 		areaUtil: "198",
+		description: "Modernidade alinhado a história de Blumenau são características do Edifício Ingo Hering. CONFIRA!",
 		link: "https://www.acrcimoveis.com.br/comprar/sc/blumenau/bom-retiro/apartamento/72179301",
 	},
 ]

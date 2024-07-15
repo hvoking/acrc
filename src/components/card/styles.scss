@@ -7,21 +7,30 @@
 	z-index: 5;
 	background-color: rgba(255, 255, 255, 1);
 	padding-top: 20px;
+	display: grid;
+	grid-template-rows: min-content auto;
 }
 .info-wrapper {
 	padding-right: 15%;
 	padding-left: 15%;
 	display: grid;
 	grid-gap: 10px;
-	grid-template-rows: min-content 2fr min-content 1fr;
 	overflow: hidden;
-	height: 100%;
+	max-height: calc(100% - 40px);
 }
 .property-title {
 	font-size: 1.6em; 
 	color: rgba(0, 0, 0, 1);
 	padding-bottom: 10px;
 	font-weight: 700;
+	padding-left: 15%;
+	padding-right: 15%;
+}
+.property-subtitle {
+	font-size: 1.6em; 
+	color: rgba(0, 0, 0, 1);
+	font-weight: 700;
+	padding-top: 20px;
 }
 .cover-img {
 	width: 100%;
@@ -47,17 +56,71 @@
 	height: 100%;
 	overflow: hidden;
 }
+.warning-button {
+	background-color: rgba(201, 84, 82, 1);
+	width: min-content;
+	height: min-content;
+	white-space: nowrap;
+	color: rgba(255, 255, 255, 1);
+	padding: 10px;
+	border-radius: 10px;
+	font-weight: 700;
+	letter-spacing: 1.4px;
+	word-spacing: 4px;
+}
+.contact-section {
+	display: grid;
+	grid-template-columns: auto min-content;
+	padding-top: 20px;
+	padding-bottom: 20px;
+}
+.info-button {
+	background-color: rgba(244, 244, 244, 1);
+	width: min-content;
+	height: min-content;
+	white-space: nowrap;
+	border-radius: 15px;
+	border: 1px solid rgba(0, 0, 0, 0.6);
+	padding: 15px;
+	padding-right: 20px;
+	padding-left: 20px;
+	letter-spacing: 1.4px;
+	word-spacing: 4px;
+}
+.card-info-title {
+	font-weight: 700;
+}
+.card-info-text {
+	max-width: 60%;
+}
 // mobile-style
 @media screen and (max-width: 600px) {
+	.property-wrapper {
+		min-height: 100vh;
+		overflow-y: scroll;
+	}
 	.info-wrapper {
 		padding-right: 20px;
 		padding-left: 20px;
+		grid-template-rows: repeat(5, min-content);
+		padding-bottom: 50px;
+		grid-gap: 20px;
+		overflow-y: scroll;
 	}
 	.property-title {
 		font-size: 1.2em; 
+		padding-left: 20px;
+		padding-right: 20px;
 	}
 	.property-images {
 		grid-template-columns: auto;
 		grid-template-rows: 1fr 1fr;
+	}
+	.contact-section {
+		grid-template-columns: auto;
+		grid-gap: 20px;
+	}
+	.card-info-text {
+		max-width: 100%;
 	}
 }
