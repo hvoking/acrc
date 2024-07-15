@@ -1,7 +1,7 @@
 .obras-sc-search-wrapper {
   background-color: rgba(255, 255, 255, 1);
   padding-left: 10px;
-  border-radius: 10px;
+  border-radius: 20px;
   border: 1px solid rgba(0, 0, 0, 0.1);
   box-shadow: 4px 4px 4px rgba(0, 0, 0, .12); 
   padding-right: 5px;
@@ -18,7 +18,12 @@
 }
 .maps-input {
   border: none;
-  font-size: 1em;
+  padding-left: 10px;
+  font-size: 16px
+}
+.maps-input::placeholder {
+  opacity: 0.4;
+  font-style: italic;
 }
 .maps-input:focus {
   outline: none;
@@ -37,5 +42,5 @@
   cursor: pointer;
   height: 20px;
   align-self: center;
-  padding-right: 10px;
+  transform: scaleX(-1);
 }

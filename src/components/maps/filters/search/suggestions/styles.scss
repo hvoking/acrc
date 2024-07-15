@@ -1,6 +1,3 @@
-$font-color: rgba(255, 255, 255, 1);
-$background-color: rgba(33, 33, 43, 1);
-
 .search-suggestions {
   position: absolute;
   top: 30px;
@@ -10,8 +7,8 @@ $background-color: rgba(33, 33, 43, 1);
   padding: 0;
   margin: 0;
   width: 100%;
-  color: $font-color;
-  background-color: $background-color;
+  color: rgba(255, 255, 255, 1);
+  background-color: rgba(33, 33, 43, 1);
   font-weight: 400;
   z-index: 7;
 }

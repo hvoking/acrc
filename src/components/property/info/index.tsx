@@ -1,11 +1,15 @@
-export const Info = ({ propertyInfo }: any) => {
+// App imports
+import './styles.scss';
 
+export const Info = ({ propertyInfo }: any) => {
 	return (
-		<div style={{fontSize: "1.6em", color: "rgba(0, 0, 0, 1)"}}>
-			<div>{propertyInfo.nome}</div>
-			<div style={{display: "grid", gridTemplateColumns: "1fr 1fr"}}>
+		<div>
+			<div className="property-title">
+				{propertyInfo.nome}
+			</div>
+			<div className="property-images">
 				<img src={propertyInfo.urls[0]} alt="cover-img" width="100%"/>
-				<div style={{display: "grid", gridTemplateColumns: "1fr 1fr"}}>
+				<div className="property-secondary-images">
 					<img src={propertyInfo.urls[1]} alt="cover-img" width="100%"/>
 					<img src={propertyInfo.urls[2]} alt="cover-img" width="100%"/>
 					<img src={propertyInfo.urls[3]} alt="cover-img" width="100%"/>

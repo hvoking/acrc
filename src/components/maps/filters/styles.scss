@@ -23,13 +23,6 @@
   grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 10px;
 }
-.date-filter {
-  border: 1px solid rgba(0, 0, 0, 0.2);
-  border-radius: 10px;
-  text-align: center;
-  padding-top: 5px;
-  padding-bottom: 5px;
-}
 .map-filters-button {
   position: absolute;
   width: 50px;
@@ -40,4 +33,26 @@
   box-shadow: 4px 4px 4px rgba(0, 0, 0, .12); 
   cursor: pointer;
   z-index: 5;
+}
+.date-filter {
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  text-align: center;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  cursor: pointer;
+}
+.date-filter:hover {
+  background-color: rgba(218, 225, 251, 1)
+}
+// mobile-style
+@media screen and (max-width: 600px) {
+  .map-filters-wrapper {
+    grid-gap: 10px;
+    padding-right: 10px;
+    padding-left: 10px;
+  }
+  .date-filter {
+    font-size: 0.8em;
+  }
 }

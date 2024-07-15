@@ -19,7 +19,7 @@ export const Filters = () => {
 				<div>
 					<div className="date-filter-title">Data de Entrega</div>
 					<div className="date-filter-wrapper">
-						<div className="date-filter">Todos</div>
+						<div className="date-filter" style={{fontSize: "0.7em", backgroundColor: "rgba(218, 225, 251, 1)"}}>TODOS</div>
 						<div className="date-filter">2024</div>
 						<div className="date-filter">2025</div>
 						<div className="date-filter">2026</div>

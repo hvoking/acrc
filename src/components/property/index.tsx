@@ -18,7 +18,7 @@ export const Property = () => {
 	const handleStart = (e: any) => {
 		e.stopPropagation();
 		e.preventDefault();
-        offsetY.current = (e.clientY || e.touches[0].clientY) - draggableRef.current.getBoundingClientRect().top;
+        offsetY.current = (e.clientY || (e.touches && e.touches[0].clientY)) - draggableRef.current.getBoundingClientRect().top;
         isDragging.current = true;
 
         document.addEventListener('mousemove', handleMove);
@@ -31,9 +31,9 @@ export const Property = () => {
     	e.stopPropagation();
     	e.preventDefault();
         if (isDragging.current) {
-        	const clientY = e.clientY || e.touches[0].clientY;
+        	const clientY = e.clientY || (e.touches && e.touches[0].clientY);
         	const offset = clientY - offsetY.current;
-            const newTop = offset < 60 ? 60 : offset;
+            const newTop = offset < 0 ? 0 : offset;
             if (newTop) {
                 requestAnimationFrame(() => {
                     draggableRef.current.style.top = `${newTop}px`;
@@ -61,12 +61,34 @@ export const Property = () => {
         			onTouchStart={handleStart}
         		>
                     <div className="circle-cross-wrapper">
-                        <img
-                            className="circle-cross"
-                            src={process.env.PUBLIC_URL + '/static/icons/circle_cross.svg'}
-                            alt="search-icon"
-                            onClick={() => setPropertyInfo(null)}
-                        />
+                        <svg viewBox="0 0 22 22" onClick={() => setPropertyInfo(null)}>
+                            <circle
+                                cx={11}
+                                cy={11}
+                                r={10}
+                                stroke="rgba(0, 0, 0, 1)"
+                                strokeWidth="1.5"
+                                fill="transparent"
+                            />
+
+                            <line
+                                x1={7.5}
+                                y1={7.5}
+                                x2={14.5}
+                                y2={14.5}
+                                stroke="rgba(0, 0, 0, 1)"
+                                strokeWidth="1.5"
+                            />
+                            <line
+                                x1={14.5}
+                                y1={7.5}
+                                x2={7.5}
+                                y2={14.5}
+                                stroke="rgba(0, 0, 0, 1)"
+                                strokeWidth="1.5"
+                            />
+
+                        </svg>
                     </div>
                     <Info propertyInfo={propertyInfo}/>
         		</div>

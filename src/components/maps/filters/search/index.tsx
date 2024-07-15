@@ -101,19 +101,32 @@ export const Search = () => {
 					ref={inputRef}
 					className="maps-input"
 					type="text" 
-					placeholder="escolha a cidade"
+					placeholder="Escolha a cidade"
 					value={searchText}
 					onChange={handleChange}
 					onKeyDown={handleKeyDown}
 					spellCheck={false}
 				/>
-				<div className="cancel-cross-wrapper">
-					<img
-						className="cancel-cross"
-						src={process.env.PUBLIC_URL + '/static/icons/cancel_black.svg'}
-						alt="search-icon"
-						onClick={cleanSuggestions}
-					/>
+				<div className="circle-cross-wrapper">
+				    <svg viewBox="0 0 20 20" onClick={cleanSuggestions}>
+				        <line
+				            x1={4}
+				            y1={4}
+				            x2={16}
+				            y2={16}
+				            stroke="rgba(0, 0, 0, 0.6)"
+				            strokeWidth="2"
+				        />
+				        <line
+				            x1={16}
+				            y1={4}
+				            x2={4}
+				            y2={16}
+				            stroke="rgba(0, 0, 0, 0.6)"
+				            strokeWidth="2"
+				        />
+
+				    </svg>
 				</div>
 				{suggestionsActive && suggestions &&
 					<Suggestions 
