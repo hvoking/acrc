@@ -21,18 +21,18 @@ export const PropertyImages = ({ propertyInfo, imagesArray, imagesLength, curren
 			<div className="arrow-left">
 				<svg viewBox="0 0 50 100" onClick={decrement}>
 					<line 
-						x1="3"
+						x1="4"
 						y1="52"
-						x2="50"
-						y2="0"
+						x2="46"
+						y2="3"
 						stroke="rgba(255, 255, 255, 1)"
 						strokeWidth="10"
 					/>
 					<line 
-						x1="3"
-						y1="48"
-						x2="50"
-						y2="100"
+						x1="4"
+						y1="46"
+						x2="46"
+						y2="96"
 						stroke="rgba(255, 255, 255, 1)"
 						strokeWidth="10"
 					/>
@@ -46,18 +46,18 @@ export const PropertyImages = ({ propertyInfo, imagesArray, imagesLength, curren
 			<div className="arrow-right">
 				<svg viewBox="0 0 50 100" onClick={increment}>
 					<line 
-						x1="0"
-						y1="0"
-						x2="47"
+						x1="4"
+						y1="3"
+						x2="46"
 						y2="52"
 						stroke="rgba(255, 255, 255, 1)"
 						strokeWidth="10"
 					/>
 					<line 
-						x1="0"
-						y1="100"
-						x2="47"
-						y2="48"
+						x1="4"
+						y1="96"
+						x2="46"
+						y2="46"
 						stroke="rgba(255, 255, 255, 1)"
 						strokeWidth="10"
 					/>
