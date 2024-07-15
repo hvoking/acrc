@@ -1,6 +1,6 @@
 // App imports
 import { MapContainer } from './maps';
-import { Property } from './property';
+import { Card } from './card';
 import './styles.scss';
 
 export const Main = () => {
@@ -16,7 +16,7 @@ export const Main = () => {
 	return (
 		<div className="wrapper">
 			<MapContainer/>
-			<Property/>
+			<Card/>
 		</div>
 	)
 }
