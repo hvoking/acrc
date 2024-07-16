@@ -2,7 +2,9 @@
 import { useState } from 'react';
 
 // App imports
+import { Dates } from './dates';
 import { Search } from './search';
+import { Button } from './button';
 import './styles.scss';
 
 export const Filters = () => {
@@ -16,75 +18,14 @@ export const Filters = () => {
 		<>
 			{activateFilters && <div className="map-filters-wrapper">
 				<Search/>
-				<div>
-					<div className="date-filter-title">Data de Entrega</div>
-					<div className="date-filter-wrapper">
-						<div className="date-filter" style={{fontSize: "0.7em", backgroundColor: "rgba(218, 225, 251, 1)"}}>TODOS</div>
-						<div className="date-filter">2024</div>
-						<div className="date-filter">2025</div>
-						<div className="date-filter">2026</div>
-						<div className="date-filter">2027</div>
-						<div className="date-filter">2028</div>
-						<div className="date-filter">2029</div>
-						<div className="date-filter">2030</div>
-						<div className="date-filter">2031</div>
-					</div>
-				</div>
+				<Dates/>
 			</div>}
-			<div 
-				className="map-filters-button" 
-				onClick={() => setActivateFilters(prev => !prev)}
-				style={{background: circleColor}}
-				onMouseEnter={() => setHoverActivate(true)}
-				onMouseLeave={() => setHoverActivate(false)}
-			>
-				<svg viewBox={`0 0 40 40`}>
-					<g>
-						<line
-							x1={10}
-							y1={15}
-							x2={30}
-							y2={15}
-							stroke={linesColor}
-						/>
-						<circle
-							cx={15}
-							cy={15}
-							r={1.5}
-							fill={circleColor}
-							stroke={linesColor}
-						/>
-						<line
-							x1={10}
-							y1={20}
-							x2={30}
-							y2={20}
-							stroke={linesColor}
-						/>
-						<circle
-							cx={25}
-							cy={20}
-							r={1.5}
-							fill={circleColor}
-							stroke={linesColor}
-						/>
-						<line
-							x1={10}
-							y1={25}
-							x2={30}
-							y2={25}
-							stroke={linesColor}
-						/>
-						<circle
-							cx={15}
-							cy={25}
-							r={1.5}
-							fill={circleColor}
-							stroke={linesColor}
-						/>
-					</g>
-				</svg>
-			</div>
+			<Button 
+				linesColor={linesColor} 
+				circleColor={circleColor}
+				setActivateFilters={setActivateFilters}
+				setHoverActivate={setHoverActivate}
+			/>
 		</>
 	)
 }

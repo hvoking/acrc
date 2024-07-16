@@ -3,6 +3,8 @@ import { useState, useRef } from 'react';
 
 // App imports
 import { Suggestions } from './suggestions';
+import { SearchIcon } from './searchIcon';
+import { Cross } from './cross';
 import './styles.scss';
 
 // Context imports
@@ -92,31 +94,7 @@ export const Search = () => {
 	return (
 		<div className="obras-sc-search-wrapper">
 			<div className="obras-sc-search">
-				{/*<img 
-					className="header-search-icon"
-					src={process.env.PUBLIC_URL + '/static/icons/search_black.svg'}
-					alt="search-icon"
-				/>*/}
-				<div className="search-icon">
-				    <svg viewBox="0 0 20 20" onClick={cleanSuggestions}>
-				        <line
-				            x1={15}
-				            y1={15}
-				            x2={20}
-				            y2={20}
-				            stroke="rgba(0, 0, 0, 0.6)"
-				            strokeWidth="3"
-				        />
-				        <circle
-				        	cx={10}
-				        	cy={10}
-				        	r={7}
-				        	stroke="rgba(0, 0, 0, 1)"
-				        	strokeWidth="2"
-				        	fill="transparent"
-				        />
-				    </svg>
-				</div>
+				<SearchIcon/>
 				<input 
 					ref={inputRef}
 					className="maps-input"
@@ -127,26 +105,7 @@ export const Search = () => {
 					onKeyDown={handleKeyDown}
 					spellCheck={false}
 				/>
-				<div className="search-cross">
-				    <svg viewBox="0 0 15 15" onClick={cleanSuggestions}>
-				        <line
-				            x1={0}
-				            y1={0}
-				            x2={15}
-				            y2={15}
-				            stroke="rgba(0, 0, 0, 0.6)"
-				            strokeWidth="2"
-				        />
-				        <line
-				            x1={15}
-				            y1={0}
-				            x2={0}
-				            y2={15}
-				            stroke="rgba(0, 0, 0, 0.6)"
-				            strokeWidth="2"
-				        />
-				    </svg>
-				</div>
+				<Cross cleanSuggestions={cleanSuggestions}/>
 				{suggestionsActive && suggestions &&
 					<Suggestions 
 						suggestions={suggestions} 
