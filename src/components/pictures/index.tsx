@@ -3,8 +3,6 @@ import { useState } from 'react';
 
 // App imports
 import { Cross } from './cross';
-import { ArrowLeft } from './left';
-import { ArrowRight } from './right';
 import './styles.scss';
 
 // Context imports
@@ -35,13 +33,33 @@ export const Pictures = ({ setActivePictures }: any) => {
 		<div className="pictures-wrapper">
 			<Cross setActivePictures={setActivePictures}/>
 			<div className="pictures-body">
-				<ArrowLeft decrement={decrement}/>
+				<div className="arrow-wrapper" onClick={decrement}>
+					<svg viewBox="0 0 50 100">
+						<polyline 
+							points="
+								46,4 
+								6,50 
+								46,96
+							" 
+						/>
+					</svg>
+				</div>
 				<img 
 					className="pictures-item"
 					src={propertyInfo.urls[currentImage]}
 					alt="property-image"
 				/>
-				<ArrowRight increment={increment}/>
+				<div className="arrow-wrapper" onClick={increment}>
+					<svg viewBox="0 0 50 100">
+						<polyline
+							points="
+								4, 4
+								44, 50
+								4, 96
+							"
+						/>
+					</svg>
+				</div>
 			</div>
 		</div>
 	)
