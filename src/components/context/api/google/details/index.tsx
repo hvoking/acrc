@@ -4,9 +4,6 @@ import { useState, useEffect, useContext, createContext } from 'react';
 // Context imports
 import { useGeo } from '../../../../context/filters/geo';
 
-// Variable imports
-import { cities, data } from './cities';
-
 const GoogleDetailsApiContext: React.Context<any> = createContext(null)
 
 export const useGoogleDetailsApi = () => {
