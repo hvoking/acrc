@@ -33,33 +33,25 @@ export const Pictures = ({ setActivePictures }: any) => {
 		<div className="pictures-wrapper">
 			<Cross setActivePictures={setActivePictures}/>
 			<div className="pictures-body">
-				<div className="arrow-wrapper" onClick={decrement}>
-					<svg viewBox="0 0 50 100">
-						<polyline 
-							points="
-								46,4 
-								6,50 
-								46,96
-							" 
-						/>
-					</svg>
-				</div>
+				<svg 
+					viewBox="0 0 50 100"
+					className="arrow-wrapper" 
+					onClick={decrement}
+				>
+					<polyline points="46,4 6,50 46,96"/>
+				</svg>
 				<img 
 					className="pictures-item"
 					src={propertyInfo.urls[currentImage]}
 					alt="property-image"
 				/>
-				<div className="arrow-wrapper" onClick={increment}>
-					<svg viewBox="0 0 50 100">
-						<polyline
-							points="
-								4, 4
-								44, 50
-								4, 96
-							"
-						/>
-					</svg>
-				</div>
+				<svg 
+					viewBox="0 0 50 100" 
+					className="arrow-wrapper" 
+					onClick={increment}
+				>
+					<polyline points="4,4 44,50 4,96"/>
+				</svg>
 			</div>
 		</div>
 	)
