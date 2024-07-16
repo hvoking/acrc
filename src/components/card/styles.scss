@@ -67,12 +67,7 @@
 	letter-spacing: 1.4px;
 	word-spacing: 4px;
 }
-.contact-section {
-	display: grid;
-	grid-template-columns: auto min-content;
-	padding-top: 20px;
-	padding-bottom: 20px;
-}
+
 .info-button {
 	background-color: rgba(244, 244, 244, 1);
 	width: min-content;
@@ -86,12 +81,7 @@
 	letter-spacing: 1.4px;
 	word-spacing: 4px;
 }
-.card-info-title {
-	font-weight: 700;
-}
-.card-info-text {
-	max-width: 60%;
-}
+
 // mobile-style
 @media screen and (max-width: 600px) {
 	.property-wrapper {
@@ -114,12 +104,5 @@
 	.property-images {
 		grid-template-columns: auto;
 		grid-template-rows: 1fr 1fr;
-	}
-	.contact-section {
-		grid-template-columns: auto;
-		grid-gap: 20px;
-	}
-	.card-info-text {
-		max-width: 100%;
 	}
 }

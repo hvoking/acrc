@@ -1,0 +1,23 @@
+.contact-section {
+	display: grid;
+	grid-template-columns: auto min-content;
+	padding-top: 20px;
+	padding-bottom: 20px;
+}
+.card-info-title {
+	font-weight: 700;
+}
+.card-info-text {
+	max-width: 60%;
+}
+
+// mobile-style
+@media screen and (max-width: 600px) {
+	.contact-section {
+		grid-template-columns: auto;
+		grid-gap: 20px;
+	}
+	.card-info-text {
+		max-width: 100%;
+	}
+}
