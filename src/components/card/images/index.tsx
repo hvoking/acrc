@@ -1,3 +1,6 @@
+// App imports
+import './styles.scss';
+
 export const Images = ({ propertyInfo, setActivePictures }: any) => {
 	const urls = propertyInfo.urls;
 	

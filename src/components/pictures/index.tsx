@@ -26,12 +26,13 @@ export const Pictures = ({ setActivePictures }: any) => {
 		setCurrentImage(currentImage + 1);
 	}
 
+	const onClick = () => setActivePictures(false);
 	
 	if (!propertyInfo) return <></>
 
 	return (
 		<div className="pictures-wrapper">
-			<Cross setActivePictures={setActivePictures}/>
+			<Cross onClick={onClick}/>
 			<div className="pictures-body">
 				<svg 
 					viewBox="0 0 50 100"

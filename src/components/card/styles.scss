@@ -31,30 +31,6 @@
 	font-weight: 700;
 	padding-top: 20px;
 }
-.cover-img {
-	width: 100%;
-	height: 100%;
-	overflow: hidden;
-}
-.secondary-img {
-	width: 100%;
-	height: 100%;
-	overflow: hidden;
-}
-.property-images {
-	display: grid; 
-	grid-template-columns: 1fr 1fr;
-	grid-gap: 15px;
-	overflow: hidden;
-}
-.property-secondary-images {
-	display: grid; 
-	grid-template-columns: 1fr 1fr;
-	grid-column-gap: 15px;
-	grid-row-gap: 5px;
-	height: 100%;
-	overflow: hidden;
-}
 .warning-button {
 	background-color: rgba(201, 84, 82, 1);
 	width: min-content;
@@ -100,9 +76,5 @@
 		font-size: 1.2em; 
 		padding-left: 20px;
 		padding-right: 20px;
-	}
-	.property-images {
-		grid-template-columns: auto;
-		grid-template-rows: 1fr 1fr;
 	}
 }

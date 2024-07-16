@@ -1,10 +1,10 @@
 // App imports
 import './styles.scss';
 
-export const Cross = ({ setActivePictures }: any) => {
+export const Cross = ({ onClick }: any) => {
 	return (
 		<div className="card-cross">
-		    <svg viewBox="0 0 22 22" onClick={() => setActivePictures(false)}>
+		    <svg viewBox="0 0 22 22" onClick={onClick}>
 		        <circle
 		            cx={11}
 		            cy={11}
