@@ -2,7 +2,7 @@
 import { FiltersProvider } from './filters';
 import { ApiProvider } from './api';
 import { MapboxProvider } from './mapbox';
-import { MapsProvider } from './maps';
+import { TooltipProvider } from './tooltip';
 import { DraggableProvider } from './draggable';
 
 export const MainProvider = ({children}: any) => {
@@ -10,11 +10,11 @@ export const MainProvider = ({children}: any) => {
     <FiltersProvider>
     <ApiProvider>
     <MapboxProvider>
-    <MapsProvider>
+    <TooltipProvider>
     <DraggableProvider>
       {children}
     </DraggableProvider>
-    </MapsProvider>
+    </TooltipProvider>
     </MapboxProvider>
     </ApiProvider>
     </FiltersProvider>

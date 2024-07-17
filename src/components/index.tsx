@@ -4,7 +4,7 @@ import { useState } from 'react';
 // App imports
 import { MapContainer } from './maps';
 import { Card } from './card';
-import { Pictures } from './pictures';
+import { Slider } from './slider';
 import './styles.scss';
 
 export const Main = () => {
@@ -23,7 +23,7 @@ export const Main = () => {
 		<div className="wrapper">
 			<MapContainer/>
 			<Card setActivePictures={setActivePictures}/>
-			{activePicture && <Pictures setActivePictures={setActivePictures}/>}
+			{activePicture && <Slider setActivePictures={setActivePictures}/>}
 		</div>
 	)
 }

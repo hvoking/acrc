@@ -25,6 +25,7 @@
 @media screen and (max-width: 600px) {
 	.property-images {
 		grid-template-columns: auto;
-		grid-template-rows: 1fr 1fr;
+		grid-template-rows: min-content auto;
+		overflow: visible;
 	}
 }

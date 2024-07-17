@@ -6,9 +6,9 @@ import { Cross } from './cross';
 import './styles.scss';
 
 // Context imports
-import { useTooltip } from '../context/maps/tooltip';
+import { useTooltip } from '../context/tooltip';
 
-export const Pictures = ({ setActivePictures }: any) => {
+export const Slider = ({ setActivePictures }: any) => {
 	const [ currentImage, setCurrentImage ] = useState(0);	
 	const { propertyInfo } = useTooltip();
 
@@ -26,13 +26,11 @@ export const Pictures = ({ setActivePictures }: any) => {
 		setCurrentImage(currentImage + 1);
 	}
 
-	const onClick = () => setActivePictures(false);
-	
 	if (!propertyInfo) return <></>
 
 	return (
 		<div className="pictures-wrapper">
-			<Cross onClick={onClick}/>
+			<Cross onClick={() => setActivePictures(false)}/>
 			<div className="pictures-body">
 				<svg 
 					viewBox="0 0 50 100"
@@ -44,7 +42,7 @@ export const Pictures = ({ setActivePictures }: any) => {
 				<img 
 					className="pictures-item"
 					src={propertyInfo.urls[currentImage]}
-					alt="property-image"
+					alt="property"
 				/>
 				<svg 
 					viewBox="0 0 50 100" 
@@ -58,4 +56,4 @@ export const Pictures = ({ setActivePictures }: any) => {
 	)
 }
 
-Pictures.displayName="Pictures";
+Slider.displayName="Slider";

@@ -1,3 +1,6 @@
+// App imports
+import './styles.scss';
+
 // Third-party imports
 import { Marker } from 'react-map-gl';
 

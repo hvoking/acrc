@@ -11,7 +11,7 @@ import './styles.scss';
 import { useMapbox } from '../context/mapbox';
 import { useGeo } from '../context/filters/geo';
 import { useProperty } from '../context/filters/property';
-import { useTooltip } from '../context/maps/tooltip';
+import { useTooltip } from '../context/tooltip';
 
 // Third-party imports
 import { Map } from 'react-map-gl';
@@ -23,11 +23,12 @@ export const MapContainer = () => {
 	const { viewport, setMarker, setPlaceCoordinates } = useGeo();
 	const { filterProperties, setCurrentId } = useProperty();
 
-	const onDblClick = useCallback((event: any) => {
-		const lng = event.lngLat.lng;
-		const lat = event.lngLat.lat;
-		setPlaceCoordinates({ longitude: lng, latitude: lat });
-		setMarker({ longitude: lng, latitude: lat });
+	const onDblClick = useCallback((e: any) => {
+		const lng = e.lngLat.lng;
+		const lat = e.lngLat.lat;
+		const coordinates = { longitude: lng, latitude: lat };
+		setPlaceCoordinates(coordinates);
+		setMarker(coordinates);
 	}, []);
 
 	const handleMarkerClick = (marker: any) => {
