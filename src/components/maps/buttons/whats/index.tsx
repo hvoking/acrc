@@ -1,7 +1,7 @@
 // App imports
 import './styles.scss';
 
-export const Social = () => {
+export const Whats = () => {
 	const mediaLink = "https://api.whatsapp.com/send?phone=5547997870203";
 	return (
 		<a 
@@ -20,4 +20,4 @@ export const Social = () => {
 }
 
 
-Social.displayName="Social";
+Whats.displayName="Whats";

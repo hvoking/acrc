@@ -10,7 +10,6 @@
     "@types/react": "^18.0.0",
     "@types/react-dom": "^18.0.0",
     "d3": "^7.8.5",
-    "deck.gl": "^8.9.31",
     "mapbox-gl": "^2.15.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",

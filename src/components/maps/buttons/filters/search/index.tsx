@@ -8,8 +8,8 @@ import { Cross } from './cross';
 import './styles.scss';
 
 // Context imports
-import { useGeo } from '../../../context/filters/geo';
-import { useGoogleSearchApi } from '../../../context/api/google/search';
+import { useGeo } from '../../../../context/filters/geo';
+import { useGoogleSearchApi } from '../../../../context/api/google/search';
 
 export const Search = () => {
 	const { setPlaceId } = useGeo();

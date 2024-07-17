@@ -2,39 +2,26 @@
 import { useCallback } from 'react';
 
 // App imports
-import { Tooltip } from './tooltip';
-import { Social } from './social';
-import { Filters } from './filters';
-import { Logo } from './logo';
+import { Buttons } from './buttons';
+import { CustomMarker } from './marker';
+import { CustomPopup } from './popup';
 import './styles.scss';
 
 // Context imports
 import { useMapbox } from '../context/mapbox';
 import { useGeo } from '../context/filters/geo';
+import { useProperty } from '../context/filters/property';
 import { useTooltip } from '../context/maps/tooltip';
 
-// Layers imports
-import { useIconLayer } from '../context/maps/layers/icon';
-
 // Third-party imports
-import { Map, useControl } from 'react-map-gl';
-import { DeckProps } from '@deck.gl/core/typed';
-import { MapboxOverlay } from '@deck.gl/mapbox/typed';
+import { Map } from 'react-map-gl';
 import 'mapbox-gl/dist/mapbox-gl.css';
 
-const DeckGLOverlay = (props: DeckProps) => {
-  const deck = useControl<any>(() => new MapboxOverlay(props));
-  deck.setProps(props);
-  return null;
-}
-
 export const MapContainer = () => {
-	const { setPropertyInfo, setPropertyHoverInfo } = useTooltip();
+	const { propertyInfo, setPropertyInfo, propertyHoverInfo, setPropertyHoverInfo } = useTooltip();
 	const { mapRef, currentBasemap } = useMapbox();
 	const { viewport, setMarker, setPlaceCoordinates } = useGeo();
-	const { iconLayer } = useIconLayer();
-
-	const layers: any = [ iconLayer ];
+	const { filterProperties, setCurrentId } = useProperty();
 
 	const onDblClick = useCallback((event: any) => {
 		const lng = event.lngLat.lng;
@@ -42,6 +29,13 @@ export const MapContainer = () => {
 		setPlaceCoordinates({ longitude: lng, latitude: lat });
 		setMarker({ longitude: lng, latitude: lat });
 	}, []);
+
+	const handleMarkerClick = (marker: any) => {
+		setCurrentId(marker.codigo);
+		setPropertyHoverInfo(marker);
+		propertyInfo && setPropertyInfo(marker); 
+
+	}
 
 	return (
 		<div className="map-wrapper">
@@ -54,18 +48,22 @@ export const MapContainer = () => {
 				doubleClickZoom={false}
 				antialias={true}
 				preserveDrawingBuffer={true}
-				onClick={(event: any) => {
-					if (!event.layer) {
-						setPropertyHoverInfo(null);
-						setPropertyInfo(null);
-					}}
-				}
 			>
-				<DeckGLOverlay layers={layers} glOptions={{preserveDrawingBuffer: true}}/>
-				<Filters/>
-				<Tooltip/>
-				<Logo/>
-				<Social/>
+				{filterProperties.map((marker: any, index: number) => (
+			        <CustomMarker
+			          key={index}
+			          marker={marker}
+			          onClick={handleMarkerClick}
+			        />
+		      	))}
+				{propertyHoverInfo && 
+					<CustomPopup 
+						marker={propertyHoverInfo} 
+						setPropertyInfo={setPropertyInfo}
+						setPropertyHoverInfo={setPropertyHoverInfo}
+					/>
+				}
+				<Buttons/>
 			</Map>
 		</div>
 	)
