@@ -13,7 +13,7 @@ export const CustomMarker = ({ marker, onClick }: any) => {
 
   return (
     <Marker longitude={longitude} latitude={latitude}>
-        <div className="marker-content" onClick={() => onClick(marker)}>
+        <div className="marker-content" onClick={(e: any) => onClick(e, marker)}>
           <img src={logoConstrutora} alt="logo-construtora" height="20px"/>
         </div>
     </Marker>

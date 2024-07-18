@@ -31,7 +31,8 @@ export const MapContainer = () => {
 		setMarker(coordinates);
 	}, []);
 
-	const handleMarkerClick = (marker: any) => {
+	const handleMarkerClick = (e: any, marker: any) => {
+		e.stopPropagation();
 		setCurrentId(marker.codigo);
 		setPropertyHoverInfo(marker);
 		propertyInfo && setPropertyInfo(marker); 
@@ -49,6 +50,10 @@ export const MapContainer = () => {
 				doubleClickZoom={false}
 				antialias={true}
 				preserveDrawingBuffer={true}
+				onClick={() => {
+					setPropertyHoverInfo(null);
+					setPropertyInfo(null);
+				}}
 			>
 				{filterProperties.map((marker: any, index: number) => (
 			        <CustomMarker
