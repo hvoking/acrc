@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/acrc-na-planta/static/css/main.b138abf8.css",
-    "main.js": "/acrc-na-planta/static/js/main.0960e65a.js",
+    "main.js": "/acrc-na-planta/static/js/main.a26a19ec.js",
     "static/js/879.13176038.chunk.js": "/acrc-na-planta/static/js/879.13176038.chunk.js",
     "index.html": "/acrc-na-planta/index.html",
     "main.b138abf8.css.map": "/acrc-na-planta/static/css/main.b138abf8.css.map",
-    "main.0960e65a.js.map": "/acrc-na-planta/static/js/main.0960e65a.js.map",
+    "main.a26a19ec.js.map": "/acrc-na-planta/static/js/main.a26a19ec.js.map",
     "879.13176038.chunk.js.map": "/acrc-na-planta/static/js/879.13176038.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.b138abf8.css",
-    "static/js/main.0960e65a.js"
+    "static/js/main.a26a19ec.js"
   ]
 }
