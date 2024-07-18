@@ -1,6 +1,5 @@
 // App imports
 import { Cross } from './cross';
-import { Title } from './title';
 import { Images } from './images';
 import { Contact } from './contact';
 import './styles.scss';
@@ -17,16 +16,27 @@ export const Card = ({ setActivePictures }: any) => {
 
     return (
 		<div ref={draggableRef} className="property-wrapper">
-            <Cross setPropertyInfo={setPropertyInfo}/>
-            <Title name={propertyInfo.nome} handleStart={handleStart}/>
+            <div 
+                className="property-title" 
+                onMouseDown={handleStart} 
+                onTouchStart={handleStart}
+            >
+                {propertyInfo.nome}
+            </div>
             <div className="info-wrapper">
-                <Images propertyInfo={propertyInfo} setActivePictures={setActivePictures}/>
+                <Images 
+                    propertyInfo={propertyInfo} 
+                    setActivePictures={setActivePictures}
+                />
                 <div className="property-subtitle">
                     Unidades a partir de R$ {propertyInfo.valorVenda}
                 </div>
-                <div className="warning-button">ENTREGA 07/2026</div>
+                <div className="warning-button">
+                    ENTREGA 07/2026
+                </div>
                 <Contact description={propertyInfo.description}/>
             </div>
+            <Cross setPropertyInfo={setPropertyInfo}/>
 		</div>
 	)
 }

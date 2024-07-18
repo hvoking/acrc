@@ -15,20 +15,28 @@ export const GoogleSearchApiProvider = ({children}: any) => {
 	
 	useEffect(() => {
 	  const fetchData = async () => {
-	  	const temporarySearchText = searchText.replace(" ", "__");
-	    const tempUrl = `
-	    	${process.env.REACT_APP_API_URL}/
-	    	search_api
-	    	?query=${temporarySearchText}
-	    	&language=pt_BR
-	    `;
-	    const url = tempUrl.replace(/\s/g, '');
-	    const res = await fetch(url);
-	    const receivedData = await res.json();
-	    setGoogleSearchData(receivedData)
-	  }
+	    try {
+	      const temporarySearchText = searchText.replace(" ", "__");
+	      const tempUrl = `
+	        ${process.env.REACT_APP_API_URL}/
+	        search_api
+	        ?query=${temporarySearchText}
+	        &language=pt_BR
+	      `;
+	      const url = tempUrl.replace(/\s/g, '');
+	      const res = await fetch(url);
+	      if (!res.ok) {
+	        throw new Error(`HTTP error! status: ${res.status}`);
+	      }
+	      const receivedData = await res.json();
+	      setGoogleSearchData(receivedData);
+	    } catch (error) {
+	      console.error("Failed to fetch data:", error);
+	    }
+	  };
+
 	  searchText && fetchData();
-	}, [ searchText ]);
+	}, [searchText]);
 
 	return (
 		<GoogleSearchApiContext.Provider value={{ 

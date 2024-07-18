@@ -1,6 +1,7 @@
-.secondary-img {
-	width: 100%;
-	height: 100%;
+.property-images {
+	display: grid; 
+	grid-template-columns: 1fr 1fr;
+	grid-gap: 15px;
 	overflow: hidden;
 }
 .cover-img {
@@ -8,10 +9,9 @@
 	height: 100%;
 	overflow: hidden;
 }
-.property-images {
-	display: grid; 
-	grid-template-columns: 1fr 1fr;
-	grid-gap: 15px;
+.secondary-img {
+	width: 100%;
+	height: 100%;
 	overflow: hidden;
 }
 .property-secondary-images {
@@ -23,9 +23,11 @@
 	overflow: hidden;
 }
 @media screen and (max-width: 600px) {
+	.cover-img {
+		max-height: 100%;
+	}
 	.property-images {
 		grid-template-columns: auto;
 		grid-template-rows: min-content auto;
-		overflow: visible;
 	}
 }

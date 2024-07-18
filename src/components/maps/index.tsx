@@ -20,7 +20,7 @@ import 'mapbox-gl/dist/mapbox-gl.css';
 export const MapContainer = () => {
 	const { propertyInfo, setPropertyInfo, propertyHoverInfo, setPropertyHoverInfo } = useTooltip();
 	const { mapRef, currentBasemap } = useMapbox();
-	const { viewport, setMarker, setPlaceCoordinates } = useGeo();
+	const { viewport, setPlaceCoordinates } = useGeo();
 	const { filterProperties, setCurrentId } = useProperty();
 
 	const onDblClick = useCallback((e: any) => {
@@ -28,7 +28,6 @@ export const MapContainer = () => {
 		const lat = e.lngLat.lat;
 		const coordinates = { longitude: lng, latitude: lat };
 		setPlaceCoordinates(coordinates);
-		setMarker(coordinates);
 	}, []);
 
 	const handleMarkerClick = (e: any, marker: any) => {
@@ -52,7 +51,6 @@ export const MapContainer = () => {
 				preserveDrawingBuffer={true}
 				onClick={() => {
 					setPropertyHoverInfo(null);
-					setPropertyInfo(null);
 				}}
 			>
 				{filterProperties.map((marker: any, index: number) => (

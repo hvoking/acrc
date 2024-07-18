@@ -14,22 +14,21 @@ export const useMapbox = () => {
 
 export const MapboxProvider = ({children}: any) => {
   const [ currentBasemap, setCurrentBasemap ] = useState("mapbox://styles/hvoking/clygh6abe01fv01qrd3y0105g");
-  const { viewport, setMarker } = useGeo();
+  const { viewport } = useGeo();
 
   const mapRef = useRef<any>();
 
   useEffect(() => {
+    const lng = viewport.longitude;
+    const lat = viewport.latitude;
+    const zoom = viewport.zoom; 
+
     mapRef.current?.flyTo({
-      center: [ viewport.longitude, viewport.latitude ],
-      zoom: viewport.zoom,
+      center: [ lng, lat ],
+      zoom: zoom,
       duration: 3000, 
       essential: true,
     });
-
-    setMarker({
-      longitude: viewport.longitude, 
-      latitude: viewport.latitude
-    })
 
   }, [ viewport ]);
   

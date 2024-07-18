@@ -7,36 +7,19 @@ import './styles.scss';
 
 // Context imports
 import { useTooltip } from '../context/tooltip';
+import { useSlider } from '../context/filters/slider';
 
 export const Slider = ({ setActivePictures }: any) => {
-	const [ currentImage, setCurrentImage ] = useState(0);	
 	const { propertyInfo } = useTooltip();
-
-	const decrement = (e: any) => {
-		if(currentImage <= 0) {
-			return;
-		}
-		setCurrentImage(currentImage - 1);
-	}
-
-	const increment = (e: any) => {
-		if (currentImage === propertyInfo.urls.length - 1) {
-			return;
-		}
-		setCurrentImage(currentImage + 1);
-	}
+	const { currentImage, decrement, increment } = useSlider();
 
 	if (!propertyInfo) return <></>
+	const imagesLength = propertyInfo.urls.length;
 
 	return (
 		<div className="pictures-wrapper">
-			<Cross onClick={() => setActivePictures(false)}/>
 			<div className="pictures-body">
-				<svg 
-					viewBox="0 0 50 100"
-					className="arrow-wrapper" 
-					onClick={decrement}
-				>
+				<svg className="arrow-wrapper" viewBox="0 0 50 100" onClick={decrement}>
 					<polyline points="46,4 6,50 46,96"/>
 				</svg>
 				<img 
@@ -44,14 +27,11 @@ export const Slider = ({ setActivePictures }: any) => {
 					src={propertyInfo.urls[currentImage]}
 					alt="property"
 				/>
-				<svg 
-					viewBox="0 0 50 100" 
-					className="arrow-wrapper" 
-					onClick={increment}
-				>
+				<svg viewBox="0 0 50 100" className="arrow-wrapper" onClick={() => increment(imagesLength)}>
 					<polyline points="4,4 44,50 4,96"/>
 				</svg>
 			</div>
+			<Cross onClick={() => setActivePictures(false)}/>
 		</div>
 	)
 }
