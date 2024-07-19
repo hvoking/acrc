@@ -12,24 +12,27 @@ import { useGeo } from '../../../../context/filters/geo';
 import { useGoogleSearchApi } from '../../../../context/api/google/search';
 
 export const Search = () => {
-	const { setPlaceId } = useGeo();
-	const { googleSearchData, searchText, setSearchText } = useGoogleSearchApi();
+	const { viewport, setViewport, setCityName, Locations, cities } = useGeo();
+	const { searchText, setSearchText } = useGoogleSearchApi();
 
+	const [ suggestions, setSuggestions ] = useState<any>([]);
 	const [ suggestionIndex, setSuggestionIndex ] = useState(0);
 	const [ suggestionsActive, setSuggestionsActive ]= useState(false);
 	const inputRef = useRef<any>(null);
 
-	const suggestions = googleSearchData && googleSearchData.predictions.reduce((total: any, item: any) => {
-		const placeName = item.description.toLowerCase()
-		total.push(placeName)
-		return total
-	}, []);
+	const onFocus = () => {
+		setSuggestions(Object.keys(cities));
+		setSuggestionsActive(true);
+	}
 
 	const handleChange = (e: any) => {
-		const query = e.target.value;
+		const query = e.target.value.toLowerCase();
 		setSearchText(query);
-
 		if (query.length > 0) {
+			const filterSuggestions: any = Object.keys(cities).filter((suggestion: any) => 
+				suggestion.toLowerCase().indexOf(query) > -1
+			)
+			setSuggestions(filterSuggestions);
 			setSuggestionsActive(true);
 		}
 		else {
@@ -37,53 +40,46 @@ export const Search = () => {
 		}
 	};
 
-	const getCurrentPrediction = (currentSearchValue: any) => {
-		googleSearchData && googleSearchData.predictions.filter((item: any) => {
-			const placeName = item.description.toLowerCase().trim();
-			if (placeName === currentSearchValue) {
-				setPlaceId(item.place_id);
-			}
-		})
-	}
-
 	const handleClick = (e: any) => {
-		const currentSearchValue = e.target.innerText.trim();
-		getCurrentPrediction(currentSearchValue)
-		setSearchText(currentSearchValue);
-		setSuggestionsActive(false);
+		const cityValue = e.target.innerText;
+		setSuggestions([]);
+		setSearchText(cityValue)
+		setSuggestionsActive(false)
+
+		setCityName(cities[cityValue]);
+		setViewport({...viewport, ...Locations[cities[cityValue]]});
 	};
 
 	const handleKeyDown = (e: any) => {
-		// up arrow
 		if (e.keyCode === 38) {
 			if (suggestionIndex === 0) {
 				return;
 			}
 			setSuggestionIndex(suggestionIndex - 1);
 		}
-		// down arrow
 		else if (e.keyCode === 40) {
 			if (suggestionIndex - 1 === suggestions.length) {
 				return
 			}
 			setSuggestionIndex(suggestionIndex + 1);
 		}
-		// enter
+
 		else if (e.keyCode === 13) {
-			const currentSearchValue: any = suggestions && suggestions[suggestionIndex]
-			getCurrentPrediction(currentSearchValue)
-			currentSearchValue && setSearchText(currentSearchValue);
+			const cityValue: string = suggestions[suggestionIndex]
+			setSearchText(cityValue);
 			setSuggestionIndex(0);
 			setSuggestionsActive(false);
-		}
 
-		// scape
+			setCityName(cities[cityValue]);
+			setViewport({...viewport, ...Locations[cities[cityValue]]});
+		}
 		else if (e.keyCode === 27) {
 			setSearchText("");
 			setSuggestionIndex(0);
 			setSuggestionsActive(false);
 		}
 	};
+
 
 	const cleanSuggestions = () => {
 		setSearchText("");
@@ -104,6 +100,7 @@ export const Search = () => {
 					onChange={handleChange}
 					onKeyDown={handleKeyDown}
 					spellCheck={false}
+					onFocus={onFocus}
 				/>
 				<Cross cleanSuggestions={cleanSuggestions}/>
 				{suggestionsActive && suggestions &&

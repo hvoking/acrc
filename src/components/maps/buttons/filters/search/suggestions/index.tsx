@@ -17,7 +17,6 @@ export const Suggestions = ({ suggestions, suggestionIndex, handleClick }: any) 
 									width: "100%",
 									display: "flex",
 									gap: "10px",
-									height: "30px",
 									overflow: "hidden",
 									padding: "5px",
 									paddingLeft: "10px",
