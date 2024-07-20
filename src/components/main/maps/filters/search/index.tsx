@@ -11,7 +11,7 @@ import './styles.scss';
 import { useGeo } from '../../../../context';
 
 export const Search = () => {
-	const { viewport, setViewport, setCityName, Locations, cities } = useGeo();
+	const { setCityName, Locations, cities, setPlaceCoordinates } = useGeo();
 
 	const [ searchText, setSearchText ] = useState<any>("");
 	const [ suggestions, setSuggestions ] = useState<any>([]);
@@ -46,8 +46,14 @@ export const Search = () => {
 		setSearchText(cityValue)
 		setSuggestionsActive(false)
 
-		setCityName(cities[cityValue]);
-		setViewport({...viewport, ...Locations[cities[cityValue]]});
+		const cityName = cities[cityValue];
+		setCityName(cityName);
+
+		const selectedCity: any = Locations[cityName];
+		setPlaceCoordinates({ 
+			longitude: selectedCity.longitude, 
+			latitude: selectedCity.latitude 
+		});
 	};
 
 	const handleKeyDown = (e: any) => {
@@ -58,7 +64,6 @@ export const Search = () => {
 			}
 			setSuggestionIndex(suggestionIndex - 1);
 		}
-		
 		// down arrow
 		else if (e.keyCode === 40) {
 			if (suggestionIndex - 1 === suggestions.length) {
@@ -66,7 +71,6 @@ export const Search = () => {
 			}
 			setSuggestionIndex(suggestionIndex + 1);
 		}
-
 		// enter
 		else if (e.keyCode === 13) {
 			const cityValue: string = suggestions[suggestionIndex]
@@ -74,10 +78,15 @@ export const Search = () => {
 			setSuggestionIndex(0);
 			setSuggestionsActive(false);
 
-			setCityName(cities[cityValue]);
-			setViewport({...viewport, ...Locations[cities[cityValue]]});
+			const cityName = cities[cityValue];
+			setCityName(cityName);
+			
+			const selectedCity: any = Locations[cityName];
+			setPlaceCoordinates({ 
+				longitude: selectedCity.longitude, 
+				latitude: selectedCity.latitude 
+			});
 		}
-
 		// escape
 		else if (e.keyCode === 27) {
 			setSearchText("");
