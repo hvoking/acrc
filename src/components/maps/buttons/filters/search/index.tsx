@@ -9,15 +9,15 @@ import './styles.scss';
 
 // Context imports
 import { useGeo } from '../../../../context/filters/geo';
-import { useGoogleSearchApi } from '../../../../context/api/google/search';
 
 export const Search = () => {
 	const { viewport, setViewport, setCityName, Locations, cities } = useGeo();
-	const { searchText, setSearchText } = useGoogleSearchApi();
 
+	const [ searchText, setSearchText ] = useState<any>("");
 	const [ suggestions, setSuggestions ] = useState<any>([]);
 	const [ suggestionIndex, setSuggestionIndex ] = useState(0);
 	const [ suggestionsActive, setSuggestionsActive ]= useState(false);
+	
 	const inputRef = useRef<any>(null);
 
 	const onFocus = () => {
@@ -51,12 +51,15 @@ export const Search = () => {
 	};
 
 	const handleKeyDown = (e: any) => {
+		// up arrow
 		if (e.keyCode === 38) {
 			if (suggestionIndex === 0) {
 				return;
 			}
 			setSuggestionIndex(suggestionIndex - 1);
 		}
+		
+		// down arrow
 		else if (e.keyCode === 40) {
 			if (suggestionIndex - 1 === suggestions.length) {
 				return
@@ -64,6 +67,7 @@ export const Search = () => {
 			setSuggestionIndex(suggestionIndex + 1);
 		}
 
+		// enter
 		else if (e.keyCode === 13) {
 			const cityValue: string = suggestions[suggestionIndex]
 			setSearchText(cityValue);
@@ -73,6 +77,8 @@ export const Search = () => {
 			setCityName(cities[cityValue]);
 			setViewport({...viewport, ...Locations[cities[cityValue]]});
 		}
+
+		// escape
 		else if (e.keyCode === 27) {
 			setSearchText("");
 			setSuggestionIndex(0);

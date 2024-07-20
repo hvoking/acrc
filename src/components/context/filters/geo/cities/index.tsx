@@ -1,10 +1,10 @@
 export const cities: any = {
-  "balneario camboriú": "balneario_camboriu",
-  "balneario piçarras": "picarras",
-  "barra velha": "barra_velha",
-  "blumenau": "blumenau",
-  "itajaí": "itajai",
-  "navegantes": "navegantes",
-  "penha": "penha",
-  "pomerode": "pomerode",
+  "Balneário Camboriú": "balneario_camboriu",
+  "Balneário Piçarras": "picarras",
+  "Barra Velha": "barra_velha",
+  "Blumenau": "blumenau",
+  "Itajaí": "itajai",
+  "Navegantes": "navegantes",
+  "Penha": "penha",
+  "Pomerode": "pomerode",
 }
