@@ -1,7 +1,7 @@
 .search-suggestions {
   position: absolute;
   top: 40px;
-  left: -10px;
+  left: -12px;
   list-style-type: none;
   padding: 10px;
   padding-right: 20px;
@@ -12,17 +12,11 @@
   z-index: 7;
   border-radius: 20px;
   box-shadow: 2px 2px 2px rgba(0, 0, 0, .12); 
-}
-.search-suggestions {
-  li {
-    padding: 5px;
-  }
+  border: 1px solid rgba(0, 0, 0, 0.1);
 }
 .search-suggestions {
   li:hover{
     background-color: rgba(235, 235, 235, 1);
     border-radius: 10px;
   }
-}
-.suggestions-item {
 }

@@ -1,7 +1,10 @@
 // App imports
 import './styles.scss';
 
-export const Suggestions = ({ suggestions, suggestionIndex, handleClick }: any) => {
+export const Suggestions = ({ 
+	suggestions, 
+	handleClick
+}: any) => {
 	return (
 		<ul className="search-suggestions">
 			{
@@ -9,8 +12,8 @@ export const Suggestions = ({ suggestions, suggestionIndex, handleClick }: any) 
 					return (
 						<li 
 							key={index} 
-							onClick={handleClick} 
 							className="suggestions-item"
+							onClick={(e: any) => handleClick(e, suggestion)} 
 						>
 							<div 
 								style={{
@@ -26,7 +29,7 @@ export const Suggestions = ({ suggestions, suggestionIndex, handleClick }: any) 
 								<div style={{width: "20px"}}>
 									<img 
 										src={process.env.PUBLIC_URL + '/static/icons/marker.svg'} 
-										alt="location-pin" 
+										alt="pin" 
 										width="15px" 
 										style={{alignSelf: "center"}}
 									/>

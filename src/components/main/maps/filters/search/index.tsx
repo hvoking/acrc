@@ -3,7 +3,7 @@ import { useState, useRef } from 'react';
 
 // App imports
 import { Suggestions } from './suggestions';
-import { SearchIcon } from './searchIcon';
+import { SearchIcon } from './icon';
 import { Cross } from './cross';
 import './styles.scss';
 
@@ -15,6 +15,7 @@ export const Search = () => {
 
 	const [ searchText, setSearchText ] = useState<any>("");
 	const [ suggestions, setSuggestions ] = useState<any>([]);
+
 	const [ suggestionIndex, setSuggestionIndex ] = useState(0);
 	const [ suggestionsActive, setSuggestionsActive ]= useState(false);
 	
@@ -38,22 +39,6 @@ export const Search = () => {
 		else {
 			setSuggestionsActive(false)
 		}
-	};
-
-	const handleClick = (e: any) => {
-		const cityValue = e.target.innerText;
-		setSuggestions([]);
-		setSearchText(cityValue)
-		setSuggestionsActive(false)
-
-		const cityName = cities[cityValue];
-		setCityName(cityName);
-
-		const selectedCity: any = Locations[cityName];
-		setPlaceCoordinates({ 
-			longitude: selectedCity.longitude, 
-			latitude: selectedCity.latitude 
-		});
 	};
 
 	const handleKeyDown = (e: any) => {
@@ -102,6 +87,22 @@ export const Search = () => {
 		setSuggestionsActive(false);
 	}
 
+	const handleClick = (e: any, suggestion: any) => {
+		setSuggestions([]);
+		setSearchText(suggestion)
+		
+		setSuggestionsActive(false)
+
+		const cityName = cities[suggestion];
+		const selectedCity: any = Locations[cityName];
+
+		setCityName(cityName);
+		setPlaceCoordinates({ 
+			longitude: selectedCity.longitude, 
+			latitude: selectedCity.latitude 
+		});
+	};
+
 	return (
 		<div className="obras-sc-search-wrapper">
 			<div className="obras-sc-search">
@@ -120,8 +121,7 @@ export const Search = () => {
 				<Cross cleanSuggestions={cleanSuggestions}/>
 				{suggestionsActive && suggestions &&
 					<Suggestions 
-						suggestions={suggestions} 
-						suggestionIndex={suggestionIndex} 
+						suggestions={suggestions}
 						handleClick={handleClick}
 					/>
 				}
