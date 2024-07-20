@@ -8,7 +8,7 @@ import { Cross } from './cross';
 import './styles.scss';
 
 // Context imports
-import { useGeo } from '../../../../context/filters/geo';
+import { useGeo } from '../../../../context';
 
 export const Search = () => {
 	const { viewport, setViewport, setCityName, Locations, cities } = useGeo();

@@ -5,13 +5,11 @@ import { useCallback } from 'react';
 import { Buttons } from './buttons';
 import { CustomMarker } from './marker';
 import { CustomPopup } from './popup';
+import { Filters } from './filters';
 import './styles.scss';
 
 // Context imports
-import { useMapbox } from '../context/mapbox';
-import { useGeo } from '../context/filters/geo';
-import { useProperty } from '../context/filters/property';
-import { useTooltip } from '../context/tooltip';
+import { useMapbox, useGeo, useProperty, useTooltip } from '../../context';
 
 // Third-party imports
 import { Map } from 'react-map-gl';
@@ -67,6 +65,7 @@ export const MapContainer = () => {
 						setPropertyHoverInfo={setPropertyHoverInfo}
 					/>
 				}
+				<Filters/>
 				<Buttons/>
 			</Map>
 		</div>

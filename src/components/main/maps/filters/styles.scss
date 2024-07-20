@@ -12,6 +12,7 @@
   padding-top: 10px;
   padding-left: 20px;
   padding-bottom: 20px;
+  z-index: 5;
 }
 .map-filters-button {
   position: absolute;
@@ -30,5 +31,6 @@
     grid-gap: 10px;
     padding-right: 10px;
     padding-left: 10px;
+    right: 75px;
   }
 }

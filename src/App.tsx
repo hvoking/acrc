@@ -1,5 +1,5 @@
 // App imports
-import { Main } from './components';
+import { Main } from './components/main';
 import { MainProvider } from './components/context';
 import './styles.scss';
 

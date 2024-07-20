@@ -6,14 +6,14 @@ import { Cross } from './cross';
 import './styles.scss';
 
 // Context imports
-import { useTooltip } from '../context/tooltip';
-import { useSlider } from '../context/filters/slider';
+import { useTooltip, useSlider } from '../../context';
 
 export const Slider = ({ setActivePictures }: any) => {
 	const { propertyInfo } = useTooltip();
 	const { currentImage, decrement, increment } = useSlider();
 
 	if (!propertyInfo) return <></>
+		
 	const imagesLength = propertyInfo.urls.length;
 
 	return (

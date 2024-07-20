@@ -15,8 +15,11 @@
   padding-bottom: 5px;
   cursor: pointer;
 }
+.date-filter.selected {
+  background-color: rgba(218, 225, 251, 1);
+}
 .date-filter:hover {
-  background-color: rgba(235, 235, 235, 1)
+  background-color: rgba(218, 225, 251, 1);
 }
 // mobile-style
 @media screen and (max-width: 600px) {
