@@ -1,12 +1,10 @@
-// React imports
-import { useState } from 'react';
-
 // App imports
 import { Cross } from './cross';
 import './styles.scss';
 
 // Context imports
-import { useTooltip, useSlider } from '../../context';
+import { useTooltip } from '../../context/tooltip';
+import { useSlider } from '../../context/filters/slider';
 
 export const Slider = ({ setActivePictures }: any) => {
 	const { propertyInfo } = useTooltip();

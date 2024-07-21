@@ -19,8 +19,3 @@ export const FiltersProvider = ({children}: any) => {
 }
 
 FiltersProvider.displayName="FiltersProvider";
-
-export * from './geo';
-export * from './property';
-export * from './slider';
-export * from './dates';

@@ -9,7 +9,10 @@ import { Filters } from './filters';
 import './styles.scss';
 
 // Context imports
-import { useMapbox, useGeo, useProperty, useTooltip } from '../../context';
+import { useMapbox } from '../../context/mapbox';
+import { useGeo } from '../../context/filters/geo';
+import { useProperty } from '../../context/filters/property';
+import { useTooltip } from '../../context/tooltip';
 
 // Third-party imports
 import { Map } from 'react-map-gl';

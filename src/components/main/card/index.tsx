@@ -5,7 +5,8 @@ import { Contact } from './contact';
 import './styles.scss';
 
 // Context imports
-import { useTooltip, useDraggable } from '../../context';
+import { useTooltip } from '../../context/tooltip';
+import { useDraggable } from '../../context/draggable';
 
 export const Card = ({ setActivePictures }: any) => {
     const { setPropertyInfo, propertyInfo } = useTooltip();
