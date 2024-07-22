@@ -1,4 +1,4 @@
-.property-wrapper {
+.card-wrapper {
 	position: absolute;
 	width: 100%;
 	height: 100%;
@@ -9,72 +9,11 @@
 	display: grid;
 	grid-template-rows: min-content auto;
 }
-.info-wrapper {
-	padding-right: 15%;
-	padding-left: 15%;
-	display: grid;
-	grid-gap: 10px;
-	overflow: hidden;
-	max-height: calc(100% - 40px);
-}
-.property-title {
-	font-size: 1.6em; 
-	color: rgba(0, 0, 0, 1);
-	padding-bottom: 10px;
-	font-weight: 700;
-	padding-left: 15%;
-	padding-top: 20px;
-}
-.property-subtitle {
-	font-size: 1.6em; 
-	color: rgba(0, 0, 0, 1);
-	font-weight: 700;
-	padding-top: 20px;
-}
-.warning-button {
-	background-color: rgba(201, 84, 82, 1);
-	width: min-content;
-	height: min-content;
-	white-space: nowrap;
-	color: rgba(255, 255, 255, 1);
-	padding: 10px;
-	border-radius: 10px;
-	font-weight: 700;
-	letter-spacing: 1.4px;
-	word-spacing: 4px;
-}
-
-.info-button {
-	background-color: rgba(244, 244, 244, 1);
-	width: min-content;
-	height: min-content;
-	white-space: nowrap;
-	border-radius: 15px;
-	border: 1px solid rgba(0, 0, 0, 0.6);
-	padding: 15px;
-	padding-right: 20px;
-	padding-left: 20px;
-	letter-spacing: 1.4px;
-	word-spacing: 4px;
-}
 
 // mobile-style
 @media screen and (max-width: 600px) {
-	.property-wrapper {
+	.card-wrapper {
 		min-height: 100vh;
 		overflow-y: scroll;
-	}
-	.info-wrapper {
-		padding-right: 20px;
-		padding-left: 20px;
-		grid-template-rows: repeat(5, min-content);
-		padding-bottom: 50px;
-		grid-gap: 20px;
-		overflow-y: scroll;
-	}
-	.property-title {
-		font-size: 1.2em; 
-		padding-left: 20px;
-		padding-right: 20px;
 	}
 }

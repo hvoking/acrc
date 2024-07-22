@@ -10,6 +10,19 @@
 .card-info-text {
 	max-width: 60%;
 }
+.info-button {
+	background-color: rgba(244, 244, 244, 1);
+	width: min-content;
+	height: min-content;
+	white-space: nowrap;
+	border-radius: 15px;
+	border: 1px solid rgba(0, 0, 0, 0.6);
+	padding: 15px;
+	padding-right: 20px;
+	padding-left: 20px;
+	letter-spacing: 1.4px;
+	word-spacing: 4px;
+}
 
 // mobile-style
 @media screen and (max-width: 600px) {
