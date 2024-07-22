@@ -31,7 +31,10 @@ export const Search = () => {
 		setSearchText(query);
 		if (query.length > 0) {
 			const filterSuggestions: any = Object.keys(cities).filter((suggestion: any) => 
-				suggestion.toLowerCase().indexOf(query) > -1
+				{
+					const currentSuggestion = suggestion.toLowerCase().normalize("NFD").replace(/\p{Diacritic}/gu, "");
+					return currentSuggestion.indexOf(query) > -1
+				}
 			)
 			setSuggestions(filterSuggestions);
 			setSuggestionsActive(true);
