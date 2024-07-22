@@ -1,10 +1,7 @@
 // App imports
 import './styles.scss';
 
-export const Suggestions = ({ 
-	suggestions, 
-	handleClick
-}: any) => {
+export const Suggestions = ({ suggestions, 	handleClick }: any) => {
 	return (
 		<ul className="search-suggestions">
 			{

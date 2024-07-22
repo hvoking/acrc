@@ -3,8 +3,17 @@
   display: grid;
   overflow: hidden;
   font-size: 0.8em;
+  margin: 0;
+  padding: 0;
 }
 .card-thumbnail {
   width: 200px;
   border-radius: 10px 10px 0 0;
+}
+.mapboxgl-popup-content {
+  padding: 0 !important;
+  background: none !important;
+}
+.mapboxgl-popup-close-button {
+  outline: none !important;
 }
