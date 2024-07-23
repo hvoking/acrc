@@ -6,10 +6,9 @@ import './styles.scss';
 import { Popup } from 'react-map-gl';
 
 export const CustomPopup = ({ marker, setPropertyInfo, setPropertyHoverInfo }: any) => {
-	const coordinates = marker.coordinates.split(",").reverse().map((item: any) => parseFloat(item));
-
-	const longitude = coordinates[0];
-	const latitude = coordinates[1];
+	const coordinates = marker.coordinates.split(",");
+  const latitude = coordinates[0];
+	const longitude = coordinates[1];
   
   return (
     <Popup
