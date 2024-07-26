@@ -1,8 +1,8 @@
 // React imports
 import { useState, useContext, createContext } from 'react';
 
-// App imports
-import { propertyDict } from './dict';
+// Context imports
+import { usePropertyApi } from '../api/property';
 
 const PropertyContext: React.Context<any> = createContext(null)
 
@@ -13,21 +13,21 @@ export const useProperty = () => {
 }
 
 export const PropertyProvider = ({children}: any) => {
+	const { propertyData } = usePropertyApi();
+
 	const [ currentId, setCurrentId ] = useState<any>(null);
+	const [ sortKey, setSortKey ] = useState("valorvenda");
+	const [ rejectedIds, setRejectedIds ] = useState<any>([]);
 
 	const [ rooms, setRooms ] = useState<any>(null);
 	const [ suites, setSuites ] = useState<any>(null);
 	const [ garages, setGarages ] = useState<any>(null);
 
-	const [ rejectedIds, setRejectedIds ] = useState<any>([]);
+	const filterById = propertyData && propertyData.filter((item: any) => !rejectedIds.includes(item.codigo));
 
-	const [ sortKey, setSortKey ] = useState("valorVenda");
+	propertyData && filterById.sort((a: any, b: any) => a[sortKey] - b[sortKey])
 
-	const filterById = propertyDict.filter((item: any) => !rejectedIds.includes(item.codigo));
-
-	filterById.sort((a: any, b: any) => a[sortKey] - b[sortKey])
-
-	const filterProperties = filterById.filter((item: any) => {
+	const filterProperties = propertyData && filterById.filter((item: any) => {
 	    const { dormitorios, suites: itemSuites, vagas } = item;
 
 	    return (

@@ -11,7 +11,7 @@ export const Slider = ({ setActivePictures }: any) => {
 	const { currentImage, decrement, increment } = useSlider();
 
 	if (!propertyInfo) return <></>
-		
+
 	const imagesLength = propertyInfo.urls.length;
 
 	return (

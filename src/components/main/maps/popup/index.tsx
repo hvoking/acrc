@@ -8,23 +8,24 @@ import './styles.scss';
 import { Popup } from 'react-map-gl';
 
 export const CustomPopup: any = ({ marker, setPropertyInfo, setPropertyHoverInfo }: any) => {
-	const coordinates = marker.coordinates.split(",");
-  const latitude = coordinates[0];
-	const longitude = coordinates[1];
+  const coordinates = marker.geom.coordinates;
 
-  const [imageLoaded, setImageLoaded] = useState(false);
+  const longitude = coordinates[0];
+  const latitude = coordinates[1];
+
+  const [ imageLoaded, setImageLoaded ] = useState(false);
 
   useEffect(() => {
     const img = new Image();
-    img.src = marker.imgUrl;
+    img.src = marker.imgurl;
     img.onload = () => {
       setImageLoaded(true);
     };
-  }, [ marker.imgUrl ]);
+  }, [ marker.imgurl ]);
 
   const onClick = () => setPropertyInfo(marker);
   const onClose = () => setPropertyHoverInfo(null);
-  
+
   return (
       imageLoaded && (
         <Popup
@@ -35,7 +36,7 @@ export const CustomPopup: any = ({ marker, setPropertyInfo, setPropertyHoverInfo
           offset={20}
         >
           <div className="tooltip-wrapper" onClick={onClick}>
-            <img className="card-thumbnail" src={marker.imgUrl} alt="property"/>
+            <img className="card-thumbnail" src={marker.imgurl} alt="property"/>
             <Description marker={marker}/>
           </div>
         </Popup>

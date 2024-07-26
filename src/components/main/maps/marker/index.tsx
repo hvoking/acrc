@@ -5,11 +5,13 @@ import './styles.scss';
 import { Marker } from 'react-map-gl';
 
 export const CustomMarker = ({ marker, onClick }: any) => {
-	const coordinates = marker.coordinates.split(",").reverse().map((item: any) => parseFloat(item));
+	const coordinates = marker.geom.coordinates;
 
 	const longitude = coordinates[0];
 	const latitude = coordinates[1];
-	const logoConstrutora = marker.logoConstrutora;
+
+	const construtora = marker.construtora;
+  const logoConstrutora = process.env.PUBLIC_URL + `/static/construtoras/${construtora}` + '.svg';
 
   return (
     <Marker longitude={longitude} latitude={latitude}>

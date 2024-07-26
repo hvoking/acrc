@@ -16,7 +16,7 @@ export const Description = ({ propertyInfo, setActivePictures }: any) => {
 		        setActivePictures={setActivePictures}
 		    />
 		    <div className="property-subtitle">
-		        Unidades a partir de R$ {siFormat(propertyInfo.valorVenda).replaceAll(",", ".")}
+		        Unidades a partir de R$ {siFormat(propertyInfo.valorvenda).replaceAll(",", ".")}
 		    </div>
 		    <div className="warning-button">
 		        ENTREGA 07/2026

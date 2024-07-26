@@ -11,7 +11,7 @@ import './styles.scss';
 // Context imports
 import { useMapbox } from '../../context/mapbox';
 import { useGeo } from '../../context/filters/geo';
-import { useProperty } from '../../context/filters/property';
+import { useProperty } from '../../context/property';
 import { useTooltip } from '../../context/tooltip';
 
 // Third-party imports
@@ -36,7 +36,6 @@ export const MapContainer = () => {
 		setCurrentId(marker.codigo);
 		setPropertyHoverInfo(marker);
 		propertyInfo && setPropertyInfo(marker); 
-
 	}
 
 	return (
@@ -54,7 +53,7 @@ export const MapContainer = () => {
 					setPropertyHoverInfo(null);
 				}}
 			>
-				{filterProperties.map((marker: any, index: number) => (
+				{filterProperties && filterProperties.map((marker: any, index: number) => (
 			        <CustomMarker
 			          key={index}
 			          marker={marker}

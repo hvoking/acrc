@@ -13,7 +13,7 @@ export const Description = ({ marker }: any) => {
 			<div><strong>{marker.nome}</strong></div>
 			<div>{marker.description.slice(0, 70)}</div>
 			<div className="card-date">
-				<strong>A partir de R$ {siFormat(marker.valorVenda).replaceAll(",", ".")}</strong>
+				<strong>A partir de R$ {siFormat(marker.valorvenda).replaceAll(",", ".")}</strong>
 				<div className="thumbnail-warning-button">jul 2025</div>
 			</div>
 		</div>
