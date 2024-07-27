@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/acrc-na-planta/static/css/main.0d1be248.css",
-    "main.js": "/acrc-na-planta/static/js/main.878ebc5e.js",
-    "static/js/879.bf8a92ec.chunk.js": "/acrc-na-planta/static/js/879.bf8a92ec.chunk.js",
+    "main.css": "/acrc-na-planta/static/css/main.435f4c97.css",
+    "main.js": "/acrc-na-planta/static/js/main.1d49670a.js",
+    "static/js/879.8dc2c5df.chunk.js": "/acrc-na-planta/static/js/879.8dc2c5df.chunk.js",
     "index.html": "/acrc-na-planta/index.html",
-    "main.0d1be248.css.map": "/acrc-na-planta/static/css/main.0d1be248.css.map",
-    "main.878ebc5e.js.map": "/acrc-na-planta/static/js/main.878ebc5e.js.map",
-    "879.bf8a92ec.chunk.js.map": "/acrc-na-planta/static/js/879.bf8a92ec.chunk.js.map"
+    "main.435f4c97.css.map": "/acrc-na-planta/static/css/main.435f4c97.css.map",
+    "main.1d49670a.js.map": "/acrc-na-planta/static/js/main.1d49670a.js.map",
+    "879.8dc2c5df.chunk.js.map": "/acrc-na-planta/static/js/879.8dc2c5df.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.0d1be248.css",
-    "static/js/main.878ebc5e.js"
+    "static/css/main.435f4c97.css",
+    "static/js/main.1d49670a.js"
   ]
 }
