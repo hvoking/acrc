@@ -4,19 +4,18 @@ import './styles.scss';
 // Third-party imports
 import { Marker } from 'react-map-gl';
 
-export const CustomMarker = ({ filterProperties, propertyInfo, setCurrentId, setPropertyInfo, setPropertyHoverInfo, }: any) => {
+export const CustomMarker = ({ filterProperties, propertyInfo, setCurrentId, setPropertyInfo, setPropertyHoverInfo }: any) => {
   const onClick = (e: any, marker: any) => {
     e.stopPropagation();
     setCurrentId(marker.codigo);
     setPropertyHoverInfo(marker);
     propertyInfo && setPropertyInfo(marker); 
   }
-  if (!filterProperties) return <></>
 
   return (
     <>
       {
-        filterProperties.map((marker: any, index: number) => {
+        filterProperties?.map((marker: any, index: number) => {
           const coordinates = marker.geom.coordinates;
 
           const longitude = coordinates[0];
