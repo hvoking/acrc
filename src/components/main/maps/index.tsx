@@ -31,12 +31,6 @@ export const MapContainer = () => {
 		setPlaceCoordinates(coordinates);
 	}, []);
 
-	const handleMarkerClick = (e: any, marker: any) => {
-		e.stopPropagation();
-		setCurrentId(marker.codigo);
-		setPropertyHoverInfo(marker);
-		propertyInfo && setPropertyInfo(marker); 
-	}
 
 	return (
 		<div className="map-wrapper">
@@ -53,13 +47,13 @@ export const MapContainer = () => {
 					setPropertyHoverInfo(null);
 				}}
 			>
-				{filterProperties && filterProperties.map((marker: any, index: number) => (
-			        <CustomMarker
-			          key={index}
-			          marker={marker}
-			          onClick={handleMarkerClick}
-			        />
-		      	))}
+		        <CustomMarker 
+		        	filterProperties={filterProperties}
+		        	propertyInfo={propertyInfo}
+		        	setCurrentId={setCurrentId}
+		        	setPropertyInfo={setPropertyInfo}
+					setPropertyHoverInfo={setPropertyHoverInfo}
+		        />
 				{propertyHoverInfo && 
 					<CustomPopup 
 						marker={propertyHoverInfo} 
