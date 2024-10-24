@@ -24,10 +24,12 @@
 }
 @media screen and (max-width: 600px) {
 	.cover-img {
-		max-height: 100%;
+		height: auto;
+		overflow: hidden;
+		object-fit: contain;
 	}
 	.property-images {
-		grid-template-columns: auto;
-		grid-template-rows: min-content auto;
+		grid-template-columns: 1fr;
+		overflow: auto;
 	}
 }

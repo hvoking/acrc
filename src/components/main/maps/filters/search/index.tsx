@@ -83,7 +83,6 @@ export const Search = () => {
 		}
 	};
 
-
 	const cleanSuggestions = () => {
 		setSearchText("");
 		setSuggestionIndex(0);
