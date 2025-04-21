@@ -1,8 +1,8 @@
 // React imports
 import { useState, useContext, createContext } from 'react';
 
-// Context imports
-import { usePropertyApi } from 'context/api/property';
+// App imports
+import { propertyData } from './data';
 
 const PropertyContext: React.Context<any> = createContext(null)
 
@@ -13,8 +13,6 @@ export const useProperty = () => {
 }
 
 export const PropertyProvider = ({children}: any) => {
-	const { propertyData } = usePropertyApi();
-
 	const [ currentId, setCurrentId ] = useState<any>(null);
 	const [ sortKey, setSortKey ] = useState("valorvenda");
 	const [ rejectedIds, setRejectedIds ] = useState<any>([]);
