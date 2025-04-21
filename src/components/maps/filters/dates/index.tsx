@@ -1,7 +1,8 @@
 // App imports
 import './styles.scss';
 
-import { useDates } from '../../../../context/filters/dates';
+// Context imports
+import { useDates } from 'context/filters/dates';
 
 export const Dates = () => {
 	const { years, yearSelected, setYearSelected } = useDates();

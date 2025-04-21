@@ -2,7 +2,7 @@
 import { useState, useContext, createContext } from 'react';
 
 // Context imports
-import { usePropertyApi } from '../api/property';
+import { usePropertyApi } from 'context/api/property';
 
 const PropertyContext: React.Context<any> = createContext(null)
 

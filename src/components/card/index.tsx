@@ -5,8 +5,8 @@ import { Cross } from './cross';
 import './styles.scss';
 
 // Context imports
-import { useTooltip } from '../../context/tooltip';
-import { useDraggable } from '../../context/draggable';
+import { useTooltip } from 'context/tooltip';
+import { useDraggable } from 'context/draggable';
 
 export const Card = ({ setActivePictures }: any) => {
     const { setPropertyInfo, propertyInfo } = useTooltip();

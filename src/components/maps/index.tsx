@@ -9,10 +9,10 @@ import { Filters } from './filters';
 import './styles.scss';
 
 // Context imports
-import { useMapbox } from '../../context/mapbox';
-import { useGeo } from '../../context/filters/geo';
-import { useProperty } from '../../context/property';
-import { useTooltip } from '../../context/tooltip';
+import { useMapbox } from 'context/mapbox';
+import { useGeo } from 'context/filters/geo';
+import { useProperty } from 'context/property';
+import { useTooltip } from 'context/tooltip';
 
 // Third-party imports
 import { Map } from 'react-map-gl';
@@ -20,6 +20,7 @@ import 'mapbox-gl/dist/mapbox-gl.css';
 
 export const MapContainer = () => {
 	const { propertyInfo, setPropertyInfo, propertyHoverInfo, setPropertyHoverInfo } = useTooltip();
+
 	const { mapRef, currentBasemap } = useMapbox();
 	const { viewport, setPlaceCoordinates } = useGeo();
 	const { filterProperties, setCurrentId } = useProperty();
@@ -30,7 +31,6 @@ export const MapContainer = () => {
 		const coordinates = { longitude: lng, latitude: lat };
 		setPlaceCoordinates(coordinates);
 	}, []);
-
 
 	return (
 		<div className="map-wrapper">

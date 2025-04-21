@@ -1,6 +1,6 @@
 // App imports
-import { Main } from './components/main';
-import { MainProvider } from './components/context';
+import { Main } from 'components';
+import { MainProvider } from 'context';
 import './styles.scss';
 
 export const App = () => {

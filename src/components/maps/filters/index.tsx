@@ -16,10 +16,12 @@ export const Filters = () => {
 
 	return (
 		<>
-			{activateFilters && <div className="map-filters-wrapper">
-				<Search/>
-				<Dates/>
-			</div>}
+			{activateFilters && 
+				<div className="map-filters-wrapper">
+					<Search/>
+					<Dates/>
+				</div>
+			}
 			<Button 
 				linesColor={linesColor} 
 				circleColor={circleColor}

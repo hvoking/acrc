@@ -1,6 +1,9 @@
 // React imports
 import { useState, useEffect, useContext, createContext } from 'react';
 
+// Context imports
+import { propertyData } from './data';
+
 const PropertyApiContext: React.Context<any> = createContext(null)
 
 export const usePropertyApi = () => {
@@ -10,22 +13,6 @@ export const usePropertyApi = () => {
 }
 
 export const PropertyApiProvider = ({children}: any) => {
-	const [ propertyData, setPropertyData ] = useState<any>(null);
-	
-	useEffect(() => {
-		const fetchData = async () => {
-		  	const tempUrl = `
-		    	${process.env.REACT_APP_API_URL}/
-		    	acrc_imoveis_api
-		    `
-		    const url = tempUrl.replace(/\s/g, '');
-		    const res = await fetch(url);
-		  	const receivedData = await res.json();
-		  	setPropertyData(receivedData);
-		}
-		fetchData();
-	}, []);
-
 	return (
 		<PropertyApiContext.Provider value={{ propertyData }}>
 			{children}
