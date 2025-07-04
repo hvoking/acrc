@@ -1,14 +1,14 @@
 // App imports
 import { PropertyProvider } from './property';
 import { FiltersProvider } from './filters';
-import { MapboxProvider } from './mapbox';
+import { GeoProvider } from './geo';
 import { TooltipProvider } from './tooltip';
 import { DraggableProvider } from './draggable';
 
-export const MainProvider = ({children}: any) => {
+export const ContextProvider = ({children}: any) => {
   return (
     <FiltersProvider>
-    <MapboxProvider>
+    <GeoProvider>
     <TooltipProvider>
     <DraggableProvider>
     <PropertyProvider>
@@ -16,9 +16,9 @@ export const MainProvider = ({children}: any) => {
     </PropertyProvider>
     </DraggableProvider>
     </TooltipProvider>
-    </MapboxProvider>
+    </GeoProvider>
     </FiltersProvider>
   )
 }
 
-MainProvider.displayName="MainProvider";
+ContextProvider.displayName="ContextProvider";

@@ -5,6 +5,7 @@ body {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 .App {
-  overflow: hidden;
+  height: calc(var(--vh, 1vh) * 100);
   display: grid;
+  overflow: hidden;
 }

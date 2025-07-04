@@ -8,7 +8,7 @@ import { Cross } from './cross';
 import './styles.scss';
 
 // Context imports
-import { useGeo } from 'context/filters/geo';
+import { useGeo } from 'context/geo';
 
 export const Search = () => {
 	const { setCityName, Locations, cities, setPlaceCoordinates } = useGeo();
@@ -28,11 +28,18 @@ export const Search = () => {
 
 	const handleChange = (e: any) => {
 		const query = e.target.value.toLowerCase();
+
 		setSearchText(query);
+
 		if (query.length > 0) {
 			const filterSuggestions: any = Object.keys(cities).filter((suggestion: any) => 
 				{
-					const currentSuggestion = suggestion.toLowerCase().normalize("NFD").replace(/\p{Diacritic}/gu, "");
+					const currentSuggestion = 
+						suggestion
+							.toLowerCase()
+							.normalize("NFD")
+							.replace(/\p{Diacritic}/gu, "");
+							
 					return currentSuggestion.indexOf(query) > -1
 				}
 			)

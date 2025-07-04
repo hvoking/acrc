@@ -7,7 +7,10 @@ import { Card } from './card';
 import { Slider } from './slider';
 import './styles.scss';
 
-export const Main = () => {
+// Context imports
+import { ContextProvider } from 'context';
+
+export const App = () => {
 	const [activePicture, setActivePictures] = useState(false);
 
 	let vh = window.innerHeight * 0.01;
@@ -18,14 +21,15 @@ export const Main = () => {
 	  document.documentElement.style.setProperty('--vh', `${vh}px`);
 	});
 
-
 	return (
-		<div className="wrapper">
-			<MapContainer/>
-			<Card setActivePictures={setActivePictures}/>
-			{activePicture && <Slider setActivePictures={setActivePictures}/>}
-		</div>
+		<ContextProvider>
+			<div className="App">
+				<MapContainer/>
+				<Card setActivePictures={setActivePictures}/>
+				{activePicture && <Slider setActivePictures={setActivePictures}/>}
+			</div>
+		</ContextProvider>
 	)
 }
 
-Main.displayName="Main";
+App.displayName="App";

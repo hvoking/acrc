@@ -9,8 +9,7 @@ import { Filters } from './filters';
 import './styles.scss';
 
 // Context imports
-import { useMapbox } from 'context/mapbox';
-import { useGeo } from 'context/filters/geo';
+import { useGeo } from 'context/geo';
 import { useProperty } from 'context/property';
 import { useTooltip } from 'context/tooltip';
 
@@ -21,8 +20,7 @@ import 'mapbox-gl/dist/mapbox-gl.css';
 export const MapContainer = () => {
 	const { propertyInfo, setPropertyInfo, propertyHoverInfo, setPropertyHoverInfo } = useTooltip();
 
-	const { mapRef, currentBasemap } = useMapbox();
-	const { viewport, setPlaceCoordinates } = useGeo();
+	const { mapRef, mapStyle, viewport, setPlaceCoordinates } = useGeo();
 	const { filterProperties, setCurrentId } = useProperty();
 
 	const onDblClick = useCallback((e: any) => {
@@ -38,7 +36,7 @@ export const MapContainer = () => {
 				ref={mapRef}
 				initialViewState={viewport}
 				mapboxAccessToken={process.env.REACT_APP_MAPBOX_TOKEN} 
-				mapStyle={currentBasemap}
+				mapStyle={mapStyle}
 				onDblClick={onDblClick}
 				doubleClickZoom={false}
 				antialias={true}

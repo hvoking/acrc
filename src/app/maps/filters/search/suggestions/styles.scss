@@ -20,3 +20,11 @@
     border-radius: 10px;
   }
 }
+.suggestions-item {
+  width: 100%;
+  display: flex;
+  gap: 10px;
+  overflow: hidden;
+  padding: 5px;
+  padding-left: 10px;
+}
